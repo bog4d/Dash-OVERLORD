@@ -1,0 +1,50 @@
+[
+    {
+        "for": "this is for !flipX idle n' walk",
+        "x": 70.1,
+        "y" : 147.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    },
+    {
+        "for": "this is for !flipX idle n' walk",
+        "x": 73.1,
+        "y" : 147.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    },
+    {
+        "for": "respawn animation (not compatible with flipX",
+        "x": 97.1,
+        "y" : 147.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    },
+        {
+        "for": "slash animation (!flipX)",
+        "x": 114,
+        "y" : 147.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    },
+    {
+        "for": "slash animation (flipX)",
+        "x": 29,
+        "y" : 147.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    },
+    {
+        "for": "wake up animation (not compatible width flipX)",
+        "x": 84.1,
+        "y" : 145.95,
+        "width" : 42.9,
+        "height" : 108.9,
+        "scale" : 0.3
+    }
+]
