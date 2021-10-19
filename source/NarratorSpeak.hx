@@ -7,7 +7,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 
-class NaratorSpeak extends FlxSpriteGroup
+class NarratorSpeak extends FlxSpriteGroup
 {
 	public static var isInProgress:Bool;
 
