@@ -29,7 +29,7 @@
       "gridCellsX": 160,
       "gridCellsY": 90,
       "entities": [
-        {"name": "playerSpawn", "id": 0, "_eid": "44834203", "x": 672, "y": 1392, "originX": 0, "originY": 0},
+        {"name": "playerSpawn", "id": 0, "_eid": "44834203", "x": 640, "y": 1392, "originX": 0, "originY": 0},
         {
           "name": "spike",
           "id": 1,
