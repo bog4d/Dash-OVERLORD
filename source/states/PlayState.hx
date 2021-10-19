@@ -105,7 +105,7 @@ class PlayState extends FlxState
 			{
 				Player.MovementEnabled = false;
 			}
-			else if (!NaratorSpeak.isInProgress)
+			else if (!NarratorSpeak.isInProgress)
 				Player.MovementEnabled = true;
 		});
 
@@ -198,7 +198,7 @@ class PlayState extends FlxState
 			if (!fromLvSelect)
 			{
 				dialogEvent.kill();
-				var daNewDialog:NaratorSpeak = new NaratorSpeak('dialog');
+				var daNewDialog:NarratorSpeak = new NarratorSpeak('dialog');
 				daNewDialog.cameras = [UIcam];
 				Player.MovementEnabled = false;
 				player.velocity.x = 0;
@@ -214,7 +214,7 @@ class PlayState extends FlxState
 		}
 		#end
 
-		if (FlxG.keys.anyJustPressed([ESCAPE]) && player.animation.curAnim.name != 'wake' && !NaratorSpeak.isInProgress)
+		if (FlxG.keys.anyJustPressed([ESCAPE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
 			openSubState(new PauseSubState());
 	}
 
@@ -322,13 +322,13 @@ class PlayState extends FlxState
 					ease: FlxEase.cubeInOut,
 					onComplete: function(twn:FlxTween)
 					{
-						var watText:NaratorSpeak = new NaratorSpeak('Start');
+						var watText:NarratorSpeak = new NarratorSpeak('Start');
 						watText.cameras = [UIcam];
 						add(watText);
 					}
 				});
 			case 1:
-				var watText:NaratorSpeak = new NaratorSpeak('Start');
+				var watText:NarratorSpeak = new NarratorSpeak('Start');
 				watText.cameras = [UIcam];
 				watText.x += 90;
 				watText.y -= 100;
