@@ -66,7 +66,7 @@ class MainMenuState extends FlxState
 		add(fade);
 		add(new FlxSprite().loadGraphic('assets/images/menuLogo.png'));
 		add(optionGroup);
-		add(new FlxText(10, 670, 300, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
+		add(new FlxText(10, 670, FlxG.width, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
 
 		super.create();
 		camera.bgColor = FlxColor.WHITE;
