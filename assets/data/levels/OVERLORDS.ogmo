@@ -294,7 +294,9 @@
       "nodeDisplay": 0,
       "nodeGhost": true,
       "tags": [],
-      "values": []
+      "values": [
+        {"name": "Lines", "definition": "Text", "display": 0, "defaults": ""}
+      ]
     }
   ],
   "tilesets": [
