@@ -29,8 +29,8 @@ class LevelSelectState extends FlxState
 
 		for (i in 0...levels + 1)
 		{
-			var _text:FlxText = new FlxText(10, title.y + 110 + i * 50, FlxG.width, 'Level $i');
-			_text.setFormat('assets/data/fonts/karma.TTF', 40, FlxColor.WHITE, FlxTextAlign.LEFT);
+			var _text:FlxText = new FlxText(10, title.y + 110 + i * 55, FlxG.width, 'Level $i');
+			_text.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, FlxTextAlign.LEFT);
 			_text.antialiasing = true;
 			_text.alpha = 0.5;
 			lvGroup.add(_text);
