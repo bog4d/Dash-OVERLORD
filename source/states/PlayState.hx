@@ -214,7 +214,7 @@ class PlayState extends FlxState
 		}
 		#end
 
-		if (FlxG.keys.anyJustPressed([ESCAPE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
+		if (FlxG.keys.anyJustPressed([ESCAPE, BACKSPACE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
 			openSubState(new PauseSubState());
 	}
 
