@@ -44,6 +44,7 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		FlxG.fixedTimestep = false;
 		FlxTimer.globalManager.active = true;
 		FlxG.watch.addQuick('LevelID', LevelID);
 		canTP = true;

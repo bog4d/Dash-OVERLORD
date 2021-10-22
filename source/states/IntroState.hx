@@ -14,6 +14,7 @@ class IntroState extends FlxState
 
 	override public function create()
 	{
+		FlxG.fixedTimestep = false;
 		myName = new FlxText(0, 0, FlxG.width, Application.current.meta.get('company'));
 		myName.setFormat('assets/data/fonts/karma.TTF', 80, FlxColor.WHITE, CENTER);
 		myName.screenCenter();
