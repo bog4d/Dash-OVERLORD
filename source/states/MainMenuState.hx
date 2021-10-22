@@ -32,6 +32,7 @@ class MainMenuState extends FlxState
 		txtOptions.insert(txtOptions.length + 1, 'Quit');
 		#end
 
+		FlxG.fixedTimestep = false;
 		FlxG.mouse.visible = false;
 		UIusable = false;
 		curSelected = 0;
