@@ -93,7 +93,7 @@ class Player extends FlxSprite
 			var dashSpeed = 2000;
 			maxVelocity.x = dashSpeed;
 
-			dashWait(1.5);
+			dashWait(0.5);
 
 			FlxG.sound.play('assets/sounds/dash.wav');
 			FlxG.camera.shake(0.01, 0.1);

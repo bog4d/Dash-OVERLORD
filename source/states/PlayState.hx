@@ -168,7 +168,7 @@ class PlayState extends FlxState
 			if (!exitDoorDebounce)
 			{
 				exitDoorDebounce = true;
-				if (LevelID++ > maxLevels)
+				if (LevelID++ > maxLevels - 1)
 				{
 					if (!fromLvSelect)
 					{
@@ -214,7 +214,12 @@ class PlayState extends FlxState
 		}
 		#end
 
-		if (FlxG.keys.anyJustPressed([ESCAPE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
+		#if debug // level skip :>
+		if (FlxG.keys.justPressed.G)
+			player.setPosition(exitDoor.x, exitDoor.y);
+		#end
+
+		if (FlxG.keys.anyJustPressed([ESCAPE, BACKSPACE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
 			openSubState(new PauseSubState());
 	}
 
@@ -332,6 +337,12 @@ class PlayState extends FlxState
 				watText.cameras = [UIcam];
 				watText.x += 90;
 				watText.y -= 100;
+				add(watText);
+			case 9:
+				var watText:NarratorSpeak = new NarratorSpeak('Start');
+				watText.cameras = [UIcam];
+				watText.x += 400;
+				watText.y -= 20;
 				add(watText);
 		}
 	}
