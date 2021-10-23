@@ -125,6 +125,14 @@ class MainMenuState extends FlxState
 						{
 							FlxG.switchState(new AnimTestState());
 						});
+					case 'quit':
+						FlxG.sound.play('assets/sounds/confirm.ogg');
+						camera.fade(FlxColor.BLACK, 0.5, false, function()
+						{
+							#if cpp
+							Sys.exit(0);
+							#end
+						});
 					default:
 						FlxG.sound.play('assets/sounds/confirm.ogg');
 				}
