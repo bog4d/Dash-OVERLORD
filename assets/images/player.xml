@@ -61,14 +61,14 @@
 	<SubTexture name="respawn ouch0001" x="6136" y="0" width="238" height="378" frameX="-11" frameY="-20" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0002" x="6424" y="0" width="249" height="375" frameX="0" frameY="-23" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0003" x="6723" y="0" width="242" height="377" frameX="-7" frameY="-21" frameWidth="186" frameHeight="400"/>
-	<SubTexture name="respawn ouch0004" x="7015" y="0" width="187" height="386" frameX="-80" frameY="-14" frameWidth="186" frameHeight="400"/>
+	<SubTexture name="respawn ouch0004" x="7015" y="0" width="186" height="386" frameX="-80" frameY="-14" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0005" x="7252" y="0" width="198" height="388" frameX="-109" frameY="-10" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0006" x="7500" y="0" width="213" height="390" frameX="-109" frameY="-8" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0007" x="7763" y="0" width="214" height="389" frameX="-109" frameY="-8" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0008" x="0" y="447" width="207" height="389" frameX="-109" frameY="-9" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0009" x="257" y="447" width="203" height="388" frameX="-109" frameY="-10" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0010" x="510" y="447" width="186" height="393" frameX="-109" frameY="-5" frameWidth="186" frameHeight="400"/>
-	<SubTexture name="respawn ouch0011" x="746" y="447" width="187" height="395" frameX="-98" frameY="-3" frameWidth="186" frameHeight="400"/>
+	<SubTexture name="respawn ouch0011" x="746" y="447" width="186" height="395" frameX="-98" frameY="-3" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0012" x="983" y="447" width="186" height="397" frameX="-93" frameY="-1" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0013" x="1219" y="447" width="186" height="397" frameX="-90" frameY="-1" frameWidth="186" frameHeight="400"/>
 	<SubTexture name="respawn ouch0014" x="1455" y="447" width="186" height="398" frameX="-89" frameY="0" frameWidth="186" frameHeight="400"/>
@@ -84,182 +84,182 @@
 	<SubTexture name="slash0007" x="4330" y="447" width="355" height="395" frameX="-12" frameY="-3" frameWidth="186" frameHeight="398"/>
 	<SubTexture name="slash0008" x="4735" y="447" width="349" height="395" frameX="-17" frameY="-3" frameWidth="186" frameHeight="398"/>
 	<SubTexture name="slash0009" x="5134" y="447" width="349" height="395" frameX="-17" frameY="-3" frameWidth="186" frameHeight="398"/>
-	<SubTexture name="wake up0000" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0001" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0002" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0003" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0004" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0005" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0006" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0007" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0008" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0009" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0010" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0011" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0012" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0013" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0014" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0015" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0016" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0017" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0018" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0019" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0020" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0021" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0022" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0023" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0024" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0025" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0026" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0027" x="5533" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0028" x="6104" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0029" x="6675" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0030" x="7246" y="447" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0031" x="0" y="895" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0032" x="571" y="895" width="521" height="186" frameX="-10" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0033" x="1142" y="895" width="522" height="186" frameX="-9" frameY="-227" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0034" x="1714" y="895" width="522" height="331" frameX="-9" frameY="-82" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0035" x="2286" y="895" width="523" height="331" frameX="-8" frameY="-82" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0036" x="2859" y="895" width="523" height="331" frameX="-8" frameY="-82" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0037" x="3432" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0038" x="4006" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0039" x="4580" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0040" x="5154" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0041" x="5728" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0042" x="6302" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0043" x="6302" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0044" x="6876" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0045" x="7450" y="895" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0046" x="0" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0047" x="574" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0048" x="1148" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0049" x="1722" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0050" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0051" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0052" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0053" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0054" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0055" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0056" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0057" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0058" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0059" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0060" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0061" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0062" x="2296" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0063" x="2870" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0064" x="3444" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0065" x="4018" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0066" x="4592" y="1277" width="524" height="332" frameX="-7" frameY="-81" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0067" x="5166" y="1277" width="524" height="334" frameX="-7" frameY="-79" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0068" x="5740" y="1277" width="524" height="337" frameX="-7" frameY="-75" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0069" x="6314" y="1277" width="524" height="342" frameX="-7" frameY="-69" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0070" x="6888" y="1277" width="524" height="345" frameX="-7" frameY="-65" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0071" x="7462" y="1277" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0072" x="0" y="1675" width="524" height="349" frameX="-7" frameY="-61" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0073" x="574" y="1675" width="524" height="350" frameX="-7" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0074" x="1148" y="1675" width="524" height="349" frameX="-7" frameY="-61" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0075" x="1722" y="1675" width="524" height="349" frameX="-7" frameY="-61" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0076" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0077" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0078" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0079" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0080" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0081" x="2296" y="1675" width="524" height="348" frameX="-7" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0082" x="2870" y="1675" width="516" height="334" frameX="-15" frameY="-63" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0083" x="3436" y="1675" width="503" height="340" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0084" x="3989" y="1675" width="499" height="343" frameX="-9" frameY="-61" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0085" x="4538" y="1675" width="497" height="345" frameX="-6" frameY="-59" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0086" x="5085" y="1675" width="496" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0087" x="5631" y="1675" width="495" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0088" x="6176" y="1675" width="496" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0089" x="6722" y="1675" width="498" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0090" x="7270" y="1675" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0091" x="0" y="2075" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0092" x="547" y="2075" width="497" height="365" frameX="-6" frameY="-39" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0093" x="1094" y="2075" width="497" height="377" frameX="-6" frameY="-27" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0094" x="1641" y="2075" width="497" height="382" frameX="-6" frameY="-22" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0095" x="1641" y="2075" width="497" height="382" frameX="-6" frameY="-22" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0096" x="2188" y="2075" width="497" height="380" frameX="-6" frameY="-24" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0097" x="2735" y="2075" width="497" height="379" frameX="-6" frameY="-25" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0098" x="3282" y="2075" width="497" height="358" frameX="-6" frameY="-46" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0099" x="3829" y="2075" width="497" height="346" frameX="-6" frameY="-58" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0100" x="4376" y="2075" width="497" height="342" frameX="-6" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0101" x="4376" y="2075" width="497" height="342" frameX="-6" frameY="-62" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0102" x="4923" y="2075" width="497" height="343" frameX="-6" frameY="-61" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0103" x="5470" y="2075" width="497" height="345" frameX="-6" frameY="-59" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0104" x="6017" y="2075" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0105" x="6564" y="2075" width="497" height="346" frameX="-6" frameY="-58" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0106" x="7111" y="2075" width="497" height="357" frameX="-6" frameY="-47" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0107" x="7658" y="2075" width="497" height="368" frameX="-6" frameY="-36" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0108" x="0" y="2507" width="497" height="371" frameX="-6" frameY="-33" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0109" x="547" y="2507" width="497" height="371" frameX="-6" frameY="-33" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0110" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0111" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0112" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0113" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0114" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0115" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0116" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0117" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0118" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0119" x="1094" y="2507" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0120" x="1641" y="2507" width="496" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0121" x="2187" y="2507" width="494" height="368" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0122" x="2731" y="2507" width="491" height="367" frameX="-5" frameY="-35" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0123" x="3272" y="2507" width="487" height="364" frameX="-4" frameY="-36" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0124" x="3809" y="2507" width="480" height="363" frameX="-3" frameY="-37" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0125" x="4339" y="2507" width="472" height="364" frameX="-1" frameY="-38" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0126" x="4861" y="2507" width="459" height="363" frameX="0" frameY="-44" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0127" x="5370" y="2507" width="442" height="367" frameX="0" frameY="-46" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0128" x="5862" y="2507" width="414" height="371" frameX="-2" frameY="-47" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0129" x="6326" y="2507" width="335" height="372" frameX="-9" frameY="-48" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0130" x="6711" y="2507" width="259" height="373" frameX="-21" frameY="-44" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0131" x="7020" y="2507" width="233" height="380" frameX="-33" frameY="-31" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0132" x="7303" y="2507" width="211" height="385" frameX="-44" frameY="-20" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0133" x="7564" y="2507" width="194" height="386" frameX="-53" frameY="-13" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0134" x="7808" y="2507" width="185" height="387" frameX="-56" frameY="-7" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0135" x="0" y="2944" width="186" height="387" frameX="-52" frameY="-4" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0136" x="236" y="2944" width="185" height="387" frameX="-50" frameY="-1" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0137" x="471" y="2944" width="185" height="387" frameX="-49" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0138" x="706" y="2944" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0139" x="942" y="2944" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0140" x="1178" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0141" x="1413" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0142" x="1648" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0143" x="1883" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0144" x="2118" y="2944" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0145" x="2354" y="2944" width="186" height="387" frameX="-49" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0146" x="2590" y="2944" width="185" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0147" x="2825" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0148" x="3061" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0149" x="3297" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0150" x="3533" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0151" x="3769" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0152" x="4005" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0153" x="4241" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0154" x="4477" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0155" x="4477" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0156" x="4713" y="2944" width="186" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0157" x="4949" y="2944" width="185" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0158" x="5184" y="2944" width="185" height="387" frameX="-50" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0159" x="5419" y="2944" width="185" height="387" frameX="-49" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0160" x="5654" y="2944" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0161" x="5890" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0162" x="6125" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0163" x="6360" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0164" x="6595" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0165" x="6830" y="2944" width="185" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
-	<SubTexture name="wake up0166" x="7065" y="2944" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0000" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0001" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0002" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0003" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0004" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0005" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0006" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0007" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0008" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0009" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0010" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0011" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0012" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0013" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0014" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0015" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0016" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0017" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0018" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0019" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0020" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0021" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0022" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0023" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0024" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0025" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0026" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0027" x="5533" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0028" x="6100" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0029" x="6667" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0030" x="7234" y="447" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0031" x="0" y="895" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0032" x="567" y="895" width="517" height="186" frameX="-14" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0033" x="1134" y="895" width="516" height="186" frameX="-15" frameY="-227" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0034" x="1700" y="895" width="516" height="331" frameX="-15" frameY="-82" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0035" x="2266" y="895" width="515" height="331" frameX="-16" frameY="-82" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0036" x="2831" y="895" width="515" height="331" frameX="-16" frameY="-82" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0037" x="3396" y="895" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0038" x="3961" y="895" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0039" x="4526" y="895" width="514" height="332" frameX="-17" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0040" x="5090" y="895" width="514" height="332" frameX="-17" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0041" x="5654" y="895" width="514" height="332" frameX="-17" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0042" x="6218" y="895" width="514" height="332" frameX="-17" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0043" x="6782" y="895" width="514" height="332" frameX="-17" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0044" x="7346" y="895" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0045" x="0" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0046" x="565" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0047" x="1130" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0048" x="1695" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0049" x="2260" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0050" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0051" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0052" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0053" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0054" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0055" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0056" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0057" x="2825" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0058" x="3390" y="1277" width="515" height="332" frameX="-16" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0059" x="3390" y="1277" width="515" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0060" x="3390" y="1277" width="515" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0061" x="3390" y="1277" width="515" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0062" x="3390" y="1277" width="515" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0063" x="3955" y="1277" width="516" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0064" x="4521" y="1277" width="516" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0065" x="5087" y="1277" width="516" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0066" x="5653" y="1277" width="516" height="332" frameX="-15" frameY="-81" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0067" x="6219" y="1277" width="516" height="334" frameX="-15" frameY="-79" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0068" x="6785" y="1277" width="516" height="337" frameX="-15" frameY="-75" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0069" x="7351" y="1277" width="516" height="342" frameX="-15" frameY="-69" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0070" x="0" y="1669" width="516" height="345" frameX="-15" frameY="-65" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0071" x="566" y="1669" width="516" height="348" frameX="-15" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0072" x="1132" y="1669" width="517" height="349" frameX="-14" frameY="-61" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0073" x="1699" y="1669" width="517" height="350" frameX="-14" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0074" x="2266" y="1669" width="517" height="349" frameX="-14" frameY="-61" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0075" x="2833" y="1669" width="517" height="349" frameX="-14" frameY="-61" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0076" x="3400" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0077" x="3400" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0078" x="3400" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0079" x="3400" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0080" x="3400" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0081" x="3967" y="1669" width="517" height="348" frameX="-14" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0082" x="4534" y="1669" width="511" height="336" frameX="-20" frameY="-63" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0083" x="5095" y="1669" width="504" height="340" frameX="-13" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0084" x="5649" y="1669" width="499" height="343" frameX="-9" frameY="-61" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0085" x="6198" y="1669" width="497" height="345" frameX="-6" frameY="-59" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0086" x="6745" y="1669" width="496" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0087" x="7291" y="1669" width="495" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0088" x="0" y="2069" width="496" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0089" x="546" y="2069" width="498" height="344" frameX="-5" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0090" x="1094" y="2069" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0091" x="1641" y="2069" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0092" x="2188" y="2069" width="497" height="365" frameX="-6" frameY="-39" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0093" x="2735" y="2069" width="497" height="377" frameX="-6" frameY="-27" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0094" x="3282" y="2069" width="497" height="382" frameX="-6" frameY="-22" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0095" x="3282" y="2069" width="497" height="382" frameX="-6" frameY="-22" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0096" x="3829" y="2069" width="497" height="380" frameX="-6" frameY="-24" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0097" x="4376" y="2069" width="497" height="379" frameX="-6" frameY="-25" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0098" x="4923" y="2069" width="497" height="358" frameX="-6" frameY="-46" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0099" x="5470" y="2069" width="497" height="346" frameX="-6" frameY="-58" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0100" x="6017" y="2069" width="497" height="342" frameX="-6" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0101" x="6017" y="2069" width="497" height="342" frameX="-6" frameY="-62" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0102" x="6564" y="2069" width="497" height="343" frameX="-6" frameY="-61" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0103" x="7111" y="2069" width="497" height="345" frameX="-6" frameY="-59" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0104" x="7658" y="2069" width="497" height="344" frameX="-6" frameY="-60" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0105" x="0" y="2501" width="497" height="346" frameX="-6" frameY="-58" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0106" x="547" y="2501" width="497" height="357" frameX="-6" frameY="-47" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0107" x="1094" y="2501" width="497" height="368" frameX="-6" frameY="-36" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0108" x="1641" y="2501" width="497" height="371" frameX="-6" frameY="-33" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0109" x="2188" y="2501" width="497" height="371" frameX="-6" frameY="-33" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0110" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0111" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0112" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0113" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0114" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0115" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0116" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0117" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0118" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0119" x="2735" y="2501" width="497" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0120" x="3282" y="2501" width="496" height="369" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0121" x="3828" y="2501" width="494" height="368" frameX="-6" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0122" x="4372" y="2501" width="491" height="367" frameX="-5" frameY="-35" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0123" x="4913" y="2501" width="487" height="364" frameX="-4" frameY="-36" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0124" x="5450" y="2501" width="480" height="363" frameX="-3" frameY="-37" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0125" x="5980" y="2501" width="472" height="364" frameX="-1" frameY="-38" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0126" x="6502" y="2501" width="459" height="363" frameX="0" frameY="-44" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0127" x="7011" y="2501" width="442" height="367" frameX="0" frameY="-46" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0128" x="7503" y="2501" width="414" height="371" frameX="-2" frameY="-47" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0129" x="0" y="2922" width="335" height="372" frameX="-9" frameY="-48" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0130" x="385" y="2922" width="259" height="373" frameX="-21" frameY="-44" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0131" x="694" y="2922" width="233" height="380" frameX="-33" frameY="-31" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0132" x="977" y="2922" width="211" height="385" frameX="-44" frameY="-20" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0133" x="1238" y="2922" width="194" height="386" frameX="-53" frameY="-13" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0134" x="1482" y="2922" width="185" height="387" frameX="-56" frameY="-7" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0135" x="1717" y="2922" width="186" height="387" frameX="-52" frameY="-4" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0136" x="1953" y="2922" width="185" height="387" frameX="-50" frameY="-1" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0137" x="2188" y="2922" width="185" height="387" frameX="-49" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0138" x="2423" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0139" x="2659" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0140" x="2895" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0141" x="3131" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0142" x="3367" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0143" x="3603" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0144" x="3839" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0145" x="4075" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0146" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0147" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0148" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0149" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0150" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0151" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0152" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0153" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0154" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0155" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0156" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0157" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0158" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0159" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0160" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0161" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0162" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0163" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0164" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0165" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
+	<SubTexture name="wake up0166" x="4311" y="2922" width="186" height="387" frameX="-48" frameY="0" frameWidth="186" frameHeight="420"/>
 	<SubTexture name="walk0000" x="0" y="0" width="186" height="397"/>
-	<SubTexture name="walk0001" x="7301" y="2944" width="187" height="397" frameX="0" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0002" x="7538" y="2944" width="186" height="397" frameX="-3" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0003" x="7774" y="2944" width="186" height="397" frameX="-7" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0004" x="0" y="3391" width="186" height="397" frameX="-10" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0005" x="236" y="3391" width="186" height="397" frameX="-11" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0006" x="472" y="3391" width="186" height="397" frameX="-8" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0007" x="708" y="3391" width="186" height="397" frameX="-6" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0008" x="944" y="3391" width="187" height="397" frameX="-3" frameY="0" frameWidth="186" frameHeight="397"/>
-	<SubTexture name="walk0009" x="1181" y="3391" width="187" height="397" frameX="-1" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0001" x="4547" y="2922" width="186" height="397" frameX="0" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0002" x="4784" y="2922" width="186" height="397" frameX="-3" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0003" x="5020" y="2922" width="186" height="397" frameX="-7" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0004" x="5256" y="2922" width="186" height="397" frameX="-10" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0005" x="5492" y="2922" width="186" height="397" frameX="-11" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0006" x="5728" y="2922" width="186" height="397" frameX="-8" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0007" x="5964" y="2922" width="186" height="397" frameX="-6" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0008" x="6200" y="2922" width="186" height="397" frameX="-3" frameY="0" frameWidth="186" frameHeight="397"/>
+	<SubTexture name="walk0009" x="6437" y="2922" width="186" height="397" frameX="-1" frameY="0" frameWidth="186" frameHeight="397"/>
 	<SubTexture name="walk0010" x="0" y="0" width="186" height="397"/>
 </TextureAtlas>
