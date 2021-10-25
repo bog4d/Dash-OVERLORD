@@ -26,11 +26,13 @@ class NarratorSpeak extends FlxSpriteGroup
 		typeText.setFormat('assets/data/fonts/karma.TTF', 40, FlxColor.BLACK, CENTER);
 		typeText.screenCenter(X);
 		typeText.antialiasing = true;
+		typeText.setBorderStyle(OUTLINE, FlxColor.WHITE, 2);
 
 		doneText = new FlxText(0, typeText.y - 25, "Press ENTER to continue");
 		doneText.setFormat('assets/data/fonts/karma.TTF', 20, FlxColor.BLACK, CENTER);
 		doneText.screenCenter(X);
 		doneText.antialiasing = true;
+		doneText.setBorderStyle(OUTLINE, FlxColor.WHITE, 2);
 		add(doneText);
 		// typeText.sounds = [FlxG.sound.load('assets/sounds/dialogBeep.wav')];
 		add(typeText);
