@@ -42,6 +42,8 @@ class PlayState extends FlxState
 	var GameCam:FlxCamera;
 	var UIcam:FlxCamera;
 
+	public static var isMedalLocked:Bool;
+
 	override public function create()
 	{
 		FlxG.fixedTimestep = false;
@@ -114,6 +116,20 @@ class PlayState extends FlxState
 			levelEvents(); // like cutscenes or sum shit
 
 		FlxG.debugger.visible = false;
+
+		// Medal unlock (CAN ONLY BE UNLOCKED FROM STORY MODE aka NOT FROM LEVEL SELECT)
+		if (!fromLvSelect)
+		{
+			switch (LevelID)
+			{
+				case 1:
+					NGio.unlockMedal(65926); // Finished da tutorial
+					checkIfLocked(65926, "Gettin' the hang of it!", "Complete the tutorial.");
+				case 2:
+					NGio.unlockMedal(65907); // Finished Level 1
+					checkIfLocked(65907, "Lost soul?", "Beat Level 1");
+			}
+		}
 	}
 
 	override public function update(elapsed:Float)
@@ -349,6 +365,16 @@ class PlayState extends FlxState
 				watText.x += 400;
 				watText.y -= 20;
 				add(watText);
+		}
+	}
+
+	function checkIfLocked(id:Int, medName:String, medDesc:String)
+	{
+		if (isMedalLocked)
+		{
+			var popup:MedalPopup = new MedalPopup(id, medName, medDesc);
+			popup.cameras = [UIcam];
+			add(popup);
 		}
 	}
 }

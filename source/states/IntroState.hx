@@ -18,6 +18,8 @@ class IntroState extends FlxState
 
 	override public function create()
 	{
+		new NGio(SecretHA.ID, SecretHA.ENC_KEY);
+
 		FlxG.fixedTimestep = false;
 
 		backdrop = new FlxSprite();

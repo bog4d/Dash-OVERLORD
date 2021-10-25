@@ -18,6 +18,8 @@ class GameCompleteState extends FlxState
 		backText.antialiasing = true;
 		add(backText);
 		super.create();
+		NGio.unlockMedal(65906);
+		checkIfLocked(65906, "DASH OVERLORD", "Beat the game!");
 		camera.fade(FlxColor.BLACK, 0.5, true);
 	}
 
@@ -31,6 +33,15 @@ class GameCompleteState extends FlxState
 			{
 				FlxG.switchState(new MainMenuState());
 			});
+		}
+	}
+
+	function checkIfLocked(id:Int, medName:String, medDesc:String)
+	{
+		if (PlayState.isMedalLocked)
+		{
+			var popup:MedalPopup = new MedalPopup(id, medName, medDesc);
+			add(popup);
 		}
 	}
 }
