@@ -84,7 +84,7 @@ class Player extends FlxSprite
 		}
 
 		// Dashin'
-		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown) // i am aware of the "LongDash" thingy ok
+		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown && MovementEnabled) // i am aware of the "LongDash" thingy ok
 		{
 			MovementEnabled = false;
 			isDashing = true;
@@ -107,6 +107,15 @@ class Player extends FlxSprite
 		FlxG.watch.addQuick('playerVelocity X', velocity.x);
 		FlxG.watch.addQuick('Movement enabled', MovementEnabled);
 		hitboxFix();
+
+		/*
+			if (NarratorSpeak.isInProgress)
+			{
+				MovementEnabled = false;
+				acceleration.x = 0;
+				velocity.x = 0;
+			}
+		 */
 	}
 
 	function dashWait(cooldownTime:Float)
@@ -115,7 +124,8 @@ class Player extends FlxSprite
 		new FlxTimer().start(0.2, function(tmr:FlxTimer)
 		{
 			isDashing = false;
-			MovementEnabled = true;
+			if (!NarratorSpeak.isInProgress)
+				MovementEnabled = true;
 			velocity.x = 0;
 			acceleration.x = 0;
 			maxVelocity.x = daSpeed;
