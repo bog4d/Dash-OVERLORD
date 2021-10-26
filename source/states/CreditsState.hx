@@ -14,7 +14,7 @@ class CreditsState extends FlxState
 		'Created by Bogdan2D',
 		'Music by Eric Skiff',
 		'Developed with HaxeFlixel',
-		'Made in 1 week for HaxeJam 2021 <3'
+		'Initially made in 1 week for HaxeJam 2021 <3'
 	];
 
 	override public function create()
