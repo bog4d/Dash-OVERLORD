@@ -84,7 +84,7 @@ class Player extends FlxSprite
 		}
 
 		// Dashin'
-		if (FlxG.keys.anyJustPressed(dashKeys) && velocity.x != 0 && !dashCooldown) // i am aware of the "LongDash" thingy ok
+		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown) // i am aware of the "LongDash" thingy ok
 		{
 			MovementEnabled = false;
 			isDashing = true;
@@ -97,7 +97,7 @@ class Player extends FlxSprite
 
 			FlxG.sound.play('assets/sounds/dash.wav');
 			FlxG.camera.shake(0.01, 0.1);
-			if (velocity.x > 0)
+			if (!flipX)
 				velocity.x = dashSpeed;
 			else
 				velocity.x = -dashSpeed;
