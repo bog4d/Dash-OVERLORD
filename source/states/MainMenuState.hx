@@ -65,7 +65,9 @@ class MainMenuState extends FlxState
 		add(new FlxSprite().loadGraphic('assets/images/menuBg.png'));
 		add(daG);
 		add(fade);
-		add(new FlxSprite().loadGraphic('assets/images/menuLogo.png'));
+		var menuLogo:FlxSprite = new FlxSprite().loadGraphic('assets/images/menuLogo.png');
+		menuLogo.antialiasing = true;
+		add(menuLogo);
 		add(optionGroup);
 		add(new FlxText(10, 670, FlxG.width, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
 
@@ -97,11 +99,14 @@ class MainMenuState extends FlxState
 				switch (txtOptions[curSelected].toLowerCase())
 				{
 					case 'play':
-						// PlayState.hasDied = false;
+						PlayState.deaths = 0;
 						PlayState.fromLvSelect = false;
 						PlayState.LevelID = 0;
-						FlxG.sound.play('assets/sounds/confirm.ogg');
-						camera.fade(FlxColor.BLACK, 0.5, false, function()
+						FlxG.sound.play('assets/sounds/CUT.ogg');
+						camera.bgColor = FlxColor.BLACK;
+						forEach(function(spr) remove(spr));
+
+						camera.flash(FlxColor.WHITE, 5, function()
 						{
 							FlxG.switchState(new PlayState());
 						});
@@ -124,6 +129,14 @@ class MainMenuState extends FlxState
 						camera.fade(FlxColor.BLACK, 0.5, false, function()
 						{
 							FlxG.switchState(new AnimTestState());
+						});
+					case 'quit':
+						FlxG.sound.play('assets/sounds/confirm.ogg');
+						camera.fade(FlxColor.BLACK, 0.5, false, function()
+						{
+							#if cpp
+							Sys.exit(0);
+							#end
 						});
 					default:
 						FlxG.sound.play('assets/sounds/confirm.ogg');

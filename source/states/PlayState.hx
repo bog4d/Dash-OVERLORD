@@ -42,6 +42,9 @@ class PlayState extends FlxState
 	var GameCam:FlxCamera;
 	var UIcam:FlxCamera;
 
+	public static var isMedalLocked:Bool;
+	public static var deaths:Int;
+
 	override public function create()
 	{
 		FlxG.fixedTimestep = false;
@@ -76,6 +79,10 @@ class PlayState extends FlxState
 
 		level.setTileProperties(1, FlxObject.ANY);
 		level.setTileProperties(2, FlxObject.NONE);
+		level.setTileProperties(3, FlxObject.ANY);
+		level.setTileProperties(4, FlxObject.ANY);
+		level.setTileProperties(5, FlxObject.ANY);
+		level.setTileProperties(6, FlxObject.ANY);
 		//-------------------------\\
 		// LAYERING
 		var daBackDrop = new FlxBackdrop('assets/images/backdrop.png', 0.5, 0.5);
@@ -87,7 +94,7 @@ class PlayState extends FlxState
 		add(exitDoor);
 		add(player);
 
-		GameCam.follow(player, SCREEN_BY_SCREEN, 0.01);
+		GameCam.follow(player, SCREEN_BY_SCREEN, 0.05);
 		//----------------\\
 		super.create(); // da super.create() :O
 		//----------------\\
@@ -114,6 +121,20 @@ class PlayState extends FlxState
 			levelEvents(); // like cutscenes or sum shit
 
 		FlxG.debugger.visible = false;
+
+		// Medal unlock (CAN ONLY BE UNLOCKED FROM STORY MODE aka NOT FROM LEVEL SELECT)
+		if (!fromLvSelect)
+		{
+			switch (LevelID)
+			{
+				case 1:
+					NGio.unlockMedal(65926); // Finished da tutorial
+					checkIfLocked(65926, "Gettin' the hang of it!", "Complete the tutorial.");
+				case 2:
+					NGio.unlockMedal(65907); // Finished Level 1
+					checkIfLocked(65907, "Lost soul?", "Beat Level 1");
+			}
+		}
 	}
 
 	override public function update(elapsed:Float)
@@ -220,7 +241,7 @@ class PlayState extends FlxState
 			player.setPosition(exitDoor.x, exitDoor.y);
 		#end
 
-		if (FlxG.keys.anyJustPressed([ESCAPE, BACKSPACE]) && player.animation.curAnim.name != 'wake' && !NarratorSpeak.isInProgress)
+		if (FlxG.keys.anyJustPressed([ESCAPE, BACKSPACE]) && !NarratorSpeak.isInProgress && Player.MovementEnabled)
 			openSubState(new PauseSubState());
 	}
 
@@ -249,9 +270,13 @@ class PlayState extends FlxState
 					case 'left':
 						spike.angle = -90;
 						spike.setPosition(entX - 32, entY);
+						spike.width = spike.width / 2;
+						spike.offset.x += 25;
+						spike.x += 25;
 					case 'right':
 						spike.angle = 90;
 						spike.setPosition(entX - 16, entY);
+						spike.width = spike.width / 2 + 10;
 				}
 				spikeGroup.add(spike);
 			case 'tpenter':
@@ -292,6 +317,8 @@ class PlayState extends FlxState
 
 	function plrHit()
 	{
+		deaths++;
+		FlxG.watch.addQuick('Deaths', deaths);
 		player.setPosition(plrSpawnPos[0], plrSpawnPos[1]);
 		Player.MovementEnabled = false;
 		player.acceleration.x = 0;
@@ -314,6 +341,7 @@ class PlayState extends FlxState
 		switch (LevelID)
 		{
 			case 0:
+				player.screenCenter(X);
 				var daPopup:Popup = new Popup("Eric Skiff - Underclocked"); // this tune is a banger aaaaaAAAAAAAAA
 				daPopup.cameras = [UIcam];
 				add(daPopup);
@@ -321,10 +349,11 @@ class PlayState extends FlxState
 				player.animation.play('wake', true);
 				GameCam.zoom = 2;
 				GameCam.y -= 100;
+				GameCam.scroll.x += 100;
 				// new FlxTimer().start(0.01, function(tmr:FlxTimer) FlxG.sound.play('assets/sounds/wakeUp.ogg', 0.5));
 				FlxG.sound.play('assets/sounds/wakeUp.ogg', 0.5);
 
-				FlxTween.tween(GameCam, {zoom: 1, y: 0}, 7, {
+				FlxTween.tween(GameCam, {zoom: 1, y: 0, x: 0}, 7, {
 					ease: FlxEase.cubeInOut,
 					onComplete: function(twn:FlxTween)
 					{
@@ -345,6 +374,16 @@ class PlayState extends FlxState
 				watText.x += 400;
 				watText.y -= 20;
 				add(watText);
+		}
+	}
+
+	function checkIfLocked(id:Int, medName:String, medDesc:String)
+	{
+		if (isMedalLocked)
+		{
+			var popup:MedalPopup = new MedalPopup(id, medName, medDesc);
+			popup.cameras = [UIcam];
+			add(popup);
 		}
 	}
 }

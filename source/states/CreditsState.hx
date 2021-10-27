@@ -4,6 +4,8 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 
 class CreditsState extends FlxState
@@ -14,7 +16,7 @@ class CreditsState extends FlxState
 		'Created by Bogdan2D',
 		'Music by Eric Skiff',
 		'Developed with HaxeFlixel',
-		'Made in 1 week for HaxeJam 2021 <3'
+		'Initially made in 1 week for HaxeJam 2021 <3'
 	];
 
 	override public function create()
@@ -34,10 +36,15 @@ class CreditsState extends FlxState
 			var _text:FlxText = new FlxText(10, title.y + 120 + i * 60, FlxG.width, credits[i]);
 			_text.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.BLACK, CENTER);
 			_text.antialiasing = true;
+			_text.scrollFactor.set(0.5, 0.5);
 			add(_text);
 		}
 		super.create();
 		camera.fade(FlxColor.BLACK, 0.5, true);
+		camera.zoom = 2;
+		FlxTween.tween(camera, {zoom: 1}, 2, {
+			ease: FlxEase.circInOut
+		});
 	}
 
 	override public function update(elapsed:Float)
@@ -50,5 +57,8 @@ class CreditsState extends FlxState
 				FlxG.switchState(new MainMenuState());
 			});
 		}
+
+		if (FlxG.keys.justPressed.F)
+			FlxG.fullscreen = !FlxG.fullscreen;
 	}
 }

@@ -16,42 +16,48 @@ class LevelSelectState extends FlxState
 	var curSelected:Int;
 	var fade:FlxSprite;
 	var title:FlxText;
-	var lvGroup:FlxTypedGroup<FlxText>;
+	var lvGroup:FlxTypedGroup<LevelButton>;
 	var levels:Int = Std.parseInt(Assets.getText('assets/data/levels/levels.txt')); // if you put a letter in that text file you sinned >:(
 
 	override public function create()
 	{
 		UIusable = false;
 		curSelected = 0;
-		lvGroup = new FlxTypedGroup<FlxText>();
+		lvGroup = new FlxTypedGroup<LevelButton>();
 		title = new FlxText(10, 10, FlxG.width, "LEVEL SELECT").setFormat('assets/data/fonts/karma.TTF', 100, FlxColor.WHITE, LEFT);
+		#if html5
 		title.bold = true;
+		#else
+		title.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.WHITE, 2);
+		#end
 
 		for (i in 0...levels + 1)
 		{
-			var _text:FlxText = new FlxText(10, title.y + 110 + i * 55, FlxG.width, 'Level $i');
-			_text.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, FlxTextAlign.LEFT);
-			_text.antialiasing = true;
-			_text.alpha = 0.5;
+			var _text:LevelButton = new LevelButton(10 + i * 5, 10, i);
+			_text.daY = i;
 			lvGroup.add(_text);
-
-			if (_text.text == 'Level 0')
-				_text.text = 'TUTORIAL';
 		}
 
 		fade = new FlxSprite().loadGraphic('assets/images/lvSelectFade.png');
 		fade.color = FlxColor.BLACK;
-		add(new FlxSprite().loadGraphic('assets/images/lvSelectImg.png'));
+		var bgImage:FlxSprite = new FlxSprite(150, 0).loadGraphic('assets/images/lvSelectImg.png');
+		bgImage.antialiasing = true;
+		add(bgImage);
 		add(fade);
-		add(title);
 		add(lvGroup);
+		add(new FlxSprite().makeGraphic(670, 140, 0x90000000));
+		add(title);
 		super.create();
+
 		camera.fade(FlxColor.BLACK, 0.5, true, function()
 		{
 			UIusable = true;
 			changeSelectedLv(0);
 		});
-		camera.bgColor = FlxColor.WHITE;
+		FlxTween.tween(bgImage, {x: 0}, 1, {
+			ease: FlxEase.cubeOut
+		});
+		camera.bgColor = FlxColor.BLACK;
 	}
 
 	override public function update(elapsed)
@@ -94,14 +100,23 @@ class LevelSelectState extends FlxState
 
 	function changeSelectedLv(skips:Int)
 	{
+		var moveBy:Float = 0.2;
 		if (UIusable)
 		{
 			curSelected += skips;
 
 			if (curSelected < 0)
-				curSelected = lvGroup.length - 1;
+			{
+				curSelected++;
+				for (lvThing in lvGroup.members)
+					lvThing.daY -= moveBy;
+			}
 			if (curSelected >= lvGroup.length)
-				curSelected = 0;
+			{
+				curSelected--;
+				for (lvThing in lvGroup.members)
+					lvThing.daY += moveBy;
+			}
 
 			for (i in 0...lvGroup.length)
 			{
@@ -109,6 +124,14 @@ class LevelSelectState extends FlxState
 					lvGroup.members[i].alpha = 0.5;
 				else
 					lvGroup.members[i].alpha = 1;
+			}
+
+			for (lvThing in lvGroup.members)
+			{
+				if (skips > 0)
+					lvThing.daY -= moveBy;
+				else
+					lvThing.daY += moveBy;
 			}
 		}
 	}
