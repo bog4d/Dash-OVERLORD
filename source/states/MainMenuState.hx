@@ -20,9 +20,9 @@ class MainMenuState extends FlxState
 
 	var optionGroup:FlxTypedGroup<FlxText>;
 	#if !debug
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits'];
+	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Donate'];
 	#else
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'animation debug menu'];
+	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Donate', 'animation debug menu'];
 	#end
 	var curSelected:Int;
 
@@ -129,6 +129,13 @@ class MainMenuState extends FlxState
 						camera.fade(FlxColor.BLACK, 0.5, false, function()
 						{
 							FlxG.switchState(new AnimTestState());
+						});
+					case 'donate':
+						FlxG.sound.play('assets/sounds/confirm.ogg');
+						FlxG.openURL('https://bogdan2d.itch.io/dash-overlord');
+						camera.fade(FlxColor.BLACK, 0.5, false, function()
+						{
+							FlxG.resetState();
 						});
 					case 'quit':
 						FlxG.sound.play('assets/sounds/confirm.ogg');
