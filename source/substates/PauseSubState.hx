@@ -13,7 +13,7 @@ class PauseSubState extends FlxSubState
 	var pausedText:FlxText;
 	var goBackText:FlxText;
 
-	var options:Array<String> = ['RESUME', 'EXIT LEVEL'];
+	var options:Array<String> = ['RESUME', 'RESET LEVEL', 'EXIT LEVEL'];
 	var optionGROUP:FlxTypedGroup<FlxText>;
 	var curSelected:Int;
 
@@ -48,7 +48,18 @@ class PauseSubState extends FlxSubState
 		}
 
 		add(pausedText);
-		// add(goBackText);
+		if (!PlayState.fromLvSelect)
+		{
+			var deathsText:FlxText = new FlxText(0, 670, FlxG.width, 'DEATHS: ' + PlayState.deaths);
+			deathsText.setFormat('assets/data/fonts/karma.TTF', 30, FlxColor.RED, CENTER);
+			deathsText.scrollFactor.set(0, 0);
+			#if html5
+			deathsText.bold = true;
+			#else
+			deathsText.setBorderStyle(OUTLINE, FlxColor.RED, 0.5, 1);
+			#end
+			add(deathsText);
+		}
 		add(optionGROUP);
 		changeSelected(0);
 	}
@@ -64,6 +75,13 @@ class PauseSubState extends FlxSubState
 				case 'resume':
 					FlxTimer.globalManager.active = true;
 					close();
+				case 'reset level':
+					camera.fade(FlxColor.BLACK, 0.5, false, function()
+					{
+						FlxTimer.globalManager.active = true;
+						FlxG.resetState();
+					});
+
 				case 'exit level':
 					if (!PlayState.fromLvSelect)
 						camera.fade(FlxColor.BLACK, 0.5, false, function()
