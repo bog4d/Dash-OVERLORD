@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
@@ -30,6 +31,11 @@ class GameCompleteState extends FlxState
 		daText = new FlxSprite().loadGraphic('assets/images/end/text.png');
 		daText.antialiasing = true;
 		daText.alpha = 0;
+
+		var deathsText:FlxText = new FlxText(0, 670, FlxG.width, 'DEATHS: ' + PlayState.deaths);
+		deathsText.setFormat('assets/data/fonts/karma.TTF', 30, FlxColor.BLACK, CENTER);
+		deathsText.antialiasing = true;
+		deathsText.alpha = 0;
 
 		if (PlayState.deaths == 0)
 		{
@@ -72,6 +78,11 @@ class GameCompleteState extends FlxState
 			ease: FlxEase.circInOut,
 			onComplete: function(twn:FlxTween)
 			{
+				if (PlayState.deaths != 0)
+				{
+					add(deathsText);
+					FlxSpriteUtil.fadeIn(deathsText);
+				}
 				FlxSpriteUtil.fadeIn(daText);
 			}
 		});
