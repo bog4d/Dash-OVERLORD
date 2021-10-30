@@ -45,6 +45,9 @@ class CreditsState extends FlxState
 		FlxTween.tween(camera, {zoom: 1}, 2, {
 			ease: FlxEase.circInOut
 		});
+
+		NGio.unlockMedal(66013);
+		checkIfLocked(66013, 'Le Credits', 'Check out the credits!');
 	}
 
 	override public function update(elapsed:Float)
@@ -60,5 +63,14 @@ class CreditsState extends FlxState
 
 		if (FlxG.keys.justPressed.F)
 			FlxG.fullscreen = !FlxG.fullscreen;
+	}
+
+	function checkIfLocked(id:Int, medName:String, medDesc:String)
+	{
+		if (PlayState.isMedalLocked)
+		{
+			var popup:MedalPopup = new MedalPopup(id, medName, medDesc);
+			add(popup);
+		}
 	}
 }
