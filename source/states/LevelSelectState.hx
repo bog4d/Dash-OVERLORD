@@ -17,7 +17,7 @@ class LevelSelectState extends FlxState
 	var fade:FlxSprite;
 	var title:FlxText;
 	var lvGroup:FlxTypedGroup<LevelButton>;
-	var levels:Int = Std.parseInt(Assets.getText('assets/data/levels/levels.txt')); // if you put a letter in that text file you sinned >:(
+	var levels:Int = Std.parseInt(TextUtil.arrayifyTextFile('assets/data/levels/levelData.txt')[0]); // if you put a letter in that text file you sinned >:(
 
 	override public function create()
 	{
@@ -100,7 +100,7 @@ class LevelSelectState extends FlxState
 
 	function changeSelectedLv(skips:Int)
 	{
-		var moveBy:Float = 0.2;
+		var moveBy:Float = Std.parseFloat(TextUtil.arrayifyTextFile('assets/data/levels/levelData.txt')[1]); // Higher number means it scrolls more
 		if (UIusable)
 		{
 			curSelected += skips;
