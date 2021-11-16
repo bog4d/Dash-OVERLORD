@@ -26,8 +26,6 @@ class LevelButton extends FlxSpriteGroup
 		{
 			case 'Level 0':
 				daText.text = 'TUTORIAL';
-			case 'Level 10':
-				daText.text = 'ESCAPE';
 		}
 
 		add(daText);
