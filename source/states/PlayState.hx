@@ -22,7 +22,7 @@ class PlayState extends FlxState
 	// public static var hasDied:Bool;
 	public static var fromLvSelect:Bool;
 
-	var maxLevels:Int = Std.parseInt(Assets.getText('assets/data/levels/levels.txt'));
+	var maxLevels:Int = Std.parseInt(TextUtil.arrayifyTextFile('assets/data/levels/levelData.txt')[0]);
 	var canTP:Bool;
 	var exitDoorDebounce:Bool;
 
@@ -349,8 +349,7 @@ class PlayState extends FlxState
 				player.animation.play('wake', true);
 				GameCam.zoom = 2;
 				GameCam.y -= 100;
-				GameCam.scroll.x += 100;
-				// new FlxTimer().start(0.01, function(tmr:FlxTimer) FlxG.sound.play('assets/sounds/wakeUp.ogg', 0.5));
+
 				FlxG.sound.play('assets/sounds/wakeUp.ogg', 0.5);
 
 				FlxTween.tween(GameCam, {zoom: 1, y: 0, x: 0}, 7, {

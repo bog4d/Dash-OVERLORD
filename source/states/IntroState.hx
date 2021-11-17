@@ -18,6 +18,8 @@ class IntroState extends FlxState
 
 	override public function create()
 	{
+		MainMenuState.firstPlay = true;
+		FlxG.mouse.visible = false;
 		new NGio(SecretHA.ID, SecretHA.ENC_KEY);
 
 		FlxG.fixedTimestep = false;
@@ -29,6 +31,7 @@ class IntroState extends FlxState
 		myName = new FlxText(0, 0, FlxG.width, Application.current.meta.get('company'));
 		myName.setFormat('assets/data/fonts/karma.TTF', 80, FlxColor.WHITE, CENTER);
 		myName.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 5);
+		myName.antialiasing = true;
 
 		myName.screenCenter();
 		myName.bold = true;
@@ -46,6 +49,9 @@ class IntroState extends FlxState
 	override public function update(elapsed)
 	{
 		super.update(elapsed);
+
+		if (FlxG.keys.justPressed.F)
+			FlxG.fullscreen = !FlxG.fullscreen;
 	}
 
 	function rollIntro()

@@ -13,6 +13,8 @@ import lime.app.Application;
 
 class MainMenuState extends FlxState
 {
+	public static var firstPlay:Bool;
+
 	var UIusable:Bool;
 	var fade:FlxSprite;
 	var daG:FlxSprite;
@@ -102,14 +104,23 @@ class MainMenuState extends FlxState
 						PlayState.deaths = 0;
 						PlayState.fromLvSelect = false;
 						PlayState.LevelID = 0;
-						FlxG.sound.play('assets/sounds/CUT.ogg');
-						camera.bgColor = FlxColor.BLACK;
-						forEach(function(spr) remove(spr));
 
-						camera.flash(FlxColor.WHITE, 5, function()
+						if (firstPlay)
 						{
-							FlxG.switchState(new PlayState());
-						});
+							firstPlay = false;
+							FlxG.sound.play('assets/sounds/CUT.ogg');
+							camera.bgColor = FlxColor.BLACK;
+							forEach(function(spr) remove(spr));
+							camera.flash(FlxColor.WHITE, 5, function()
+							{
+								FlxG.switchState(new PlayState());
+							});
+						}
+						else
+						{
+							FlxG.sound.play('assets/sounds/confirm.ogg');
+							camera.fade(FlxColor.BLACK, 0.5, false, function() FlxG.switchState(new PlayState()));
+						}
 
 					case 'level select':
 						FlxG.sound.play('assets/sounds/confirm.ogg');

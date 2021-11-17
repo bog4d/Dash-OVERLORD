@@ -40,6 +40,10 @@ class LostSoul extends FlxSprite
 			flipX = false;
 			hitboxFix();
 		}
+		if (isTouching(FlxObject.UP) && isTouching(FlxObject.FLOOR))
+		{
+			velocity.y = -PlayState.GRAVITY / 3;
+		}
 
 		super.update(elapsed);
 	}
