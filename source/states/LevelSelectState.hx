@@ -8,6 +8,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import openfl.utils.Assets;
 
 class LevelSelectState extends FlxState
@@ -19,8 +20,15 @@ class LevelSelectState extends FlxState
 	var lvGroup:FlxTypedGroup<LevelButton>;
 	var levels:Int = Std.parseInt(TextUtil.arrayifyTextFile('assets/data/levels/levelData.txt')[0]); // if you put a letter in that text file you sinned >:(
 
+	var _settingsSave:FlxSave;
+
 	override public function create()
 	{
+		_settingsSave = new FlxSave();
+		_settingsSave.bind('Settings');
+
+		camera.antialiasing = _settingsSave.data.settings[2];
+
 		UIusable = false;
 		curSelected = 0;
 		lvGroup = new FlxTypedGroup<LevelButton>();
@@ -41,7 +49,7 @@ class LevelSelectState extends FlxState
 		fade = new FlxSprite().loadGraphic('assets/images/lvSelectFade.png');
 		fade.color = FlxColor.BLACK;
 		var bgImage:FlxSprite = new FlxSprite(150, 0).loadGraphic('assets/images/lvSelectImg.png');
-		bgImage.antialiasing = true;
+		// bgImage.antialiasing = true;
 		add(bgImage);
 		add(fade);
 		add(lvGroup);

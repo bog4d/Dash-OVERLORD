@@ -23,22 +23,22 @@ class MedalPopup extends FlxSpriteGroup
 		super();
 
 		unlockBG = new FlxSprite(-500, 15).loadGraphic('assets/images/MedalUnlockBox.png');
-		unlockBG.antialiasing = true;
+		// unlockBG.antialiasing = true;
 
 		medalImage = new FlxSprite().loadGraphic('assets/images/medals/$id.png');
-		medalImage.antialiasing = true;
+		// medalImage.antialiasing = true;
 
 		unlockText = new FlxText(0, 0, FlxG.width, "Medal unlocked!");
 		unlockText.setFormat('assets/data/fonts/karma.TTF', 25, FlxColor.YELLOW, LEFT);
-		unlockText.antialiasing = true;
+		// unlockText.antialiasing = true;
 
 		medalNameTxt = new FlxText(0, 0, FlxG.width, medalName);
 		medalNameTxt.setFormat('assets/data/fonts/karma.TTF', 20, FlxColor.WHITE, LEFT);
-		medalNameTxt.antialiasing = true;
+		// medalNameTxt.antialiasing = true;
 
 		medalDescTxt = new FlxText(0, 0, 300, medalDesc);
 		medalDescTxt.setFormat('assets/data/fonts/karma.TTF', 15, FlxColor.WHITE, LEFT);
-		medalDescTxt.antialiasing = true;
+		// medalDescTxt.antialiasing = true;
 
 		add(unlockBG);
 		add(medalImage);

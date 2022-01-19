@@ -10,6 +10,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import haxe.Json;
 import lime.utils.Assets;
 
@@ -65,7 +66,7 @@ class AnimTestState extends FlxState
 
 		//-----[CHARACTER]-----\\
 		displayChar = new FlxSprite();
-		displayChar.antialiasing = true;
+		// displayChar.antialiasing = true;
 		playAnim();
 		FlxG.debugger.visible = false;
 		displayChar.screenCenter();

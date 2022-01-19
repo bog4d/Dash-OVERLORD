@@ -7,6 +7,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 
 class CreditsState extends FlxState
 {
@@ -19,23 +20,30 @@ class CreditsState extends FlxState
 		'Initially made in 1 week for HaxeJam 2021 <3'
 	];
 
+	var _settingsSave:FlxSave;
+
 	override public function create()
 	{
+		_settingsSave = new FlxSave();
+		_settingsSave.bind('Settings');
+
+		camera.antialiasing = _settingsSave.data.settings[2];
+
 		title = new FlxText(0, 25, FlxG.width, "CREDITS").setFormat('assets/data/fonts/karma.TTF', 100, FlxColor.BLACK, CENTER);
 		title.bold = true;
-		title.antialiasing = true;
+		// title.antialiasing = true;
 		add(title);
 
 		backText = new FlxText(0, 690, FlxG.width, "Press BACKSPACE to go back").setFormat('assets/data/fonts/karma.TTF', 20, FlxColor.BLACK, CENTER);
 		backText.bold = true;
-		backText.antialiasing = true;
+		// backText.antialiasing = true;
 		add(backText);
 		add(new FlxSprite().loadGraphic('assets/images/cosmnCred.png'));
 		for (i in 0...credits.length)
 		{
 			var _text:FlxText = new FlxText(10, title.y + 120 + i * 60, FlxG.width, credits[i]);
 			_text.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.BLACK, CENTER);
-			_text.antialiasing = true;
+			// _text.antialiasing = true;
 			_text.scrollFactor.set(0.5, 0.5);
 			add(_text);
 		}

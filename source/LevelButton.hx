@@ -19,7 +19,7 @@ class LevelButton extends FlxSpriteGroup
 		daText = new FlxText(0, 0, FlxG.width, 'Level $daId');
 		daText.setPosition(X, Y);
 		daText.setFormat('assets/data/fonts/karma.TTF', 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		antialiasing = true;
+		// antialiasing = true;
 		alpha = 0.5;
 
 		switch (daText.text)

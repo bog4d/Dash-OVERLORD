@@ -8,6 +8,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import flixel.util.FlxSpriteUtil;
 
 class GameCompleteState extends FlxState
@@ -17,24 +18,31 @@ class GameCompleteState extends FlxState
 	var knife:FlxSprite;
 	var daText:FlxSprite;
 
+	var _settingsSave:FlxSave;
+
 	override public function create()
 	{
+		_settingsSave = new FlxSave();
+		_settingsSave.bind('Settings');
+
+		camera.antialiasing = _settingsSave.data.settings[2];
+
 		bg = new FlxSprite().loadGraphic('assets/images/end/bg.png');
 		bg.scrollFactor.set(0, 0);
-		bg.antialiasing = true;
+		// bg.antialiasing = true;
 		him = new FlxSprite().loadGraphic('assets/images/end/him.png');
 		him.angle = 15;
-		him.antialiasing = true;
+		// him.antialiasing = true;
 		knife = new FlxSprite().loadGraphic('assets/images/end/daKnife.png');
-		knife.antialiasing = true;
+		// knife.antialiasing = true;
 		knife.angle = -45;
 		daText = new FlxSprite().loadGraphic('assets/images/end/text.png');
-		daText.antialiasing = true;
+		// daText.antialiasing = true;
 		daText.alpha = 0;
 
 		var deathsText:FlxText = new FlxText(0, 670, FlxG.width, 'DEATHS: ' + PlayState.deaths);
 		deathsText.setFormat('assets/data/fonts/karma.TTF', 30, FlxColor.BLACK, CENTER);
-		deathsText.antialiasing = true;
+		// deathsText.antialiasing = true;
 		deathsText.alpha = 0;
 
 		if (PlayState.deaths == 0)

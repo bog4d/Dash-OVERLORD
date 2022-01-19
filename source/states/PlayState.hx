@@ -12,6 +12,7 @@ import flixel.tile.FlxTilemap;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import flixel.util.FlxTimer;
 import lime.utils.Assets;
 
@@ -45,8 +46,13 @@ class PlayState extends FlxState
 	public static var isMedalLocked:Bool;
 	public static var deaths:Int;
 
+	var _settingsSave:FlxSave;
+
 	override public function create()
 	{
+		_settingsSave = new FlxSave();
+		_settingsSave.bind('Settings');
+
 		FlxG.fixedTimestep = false;
 		FlxTimer.globalManager.active = true;
 		FlxG.watch.addQuick('LevelID', LevelID);
@@ -61,6 +67,9 @@ class PlayState extends FlxState
 		FlxCamera.defaultCameras = [GameCam];
 
 		UIcam.bgColor.alpha = 0;
+
+		GameCam.antialiasing = _settingsSave.data.settings[2];
+		UIcam.antialiasing = _settingsSave.data.settings[2];
 
 		player = new Player();
 		spikeGroup = new FlxTypedGroup<Spike>();
@@ -94,16 +103,18 @@ class PlayState extends FlxState
 		add(exitDoor);
 		add(player);
 
-		GameCam.follow(player, SCREEN_BY_SCREEN, 0.05);
+		GameCam.follow(player, _settingsSave.data.settings[0], 0.05);
 		//----------------\\
 		super.create(); // da super.create() :O
 		//----------------\\
 		map.loadEntities(placeDaEntities, "entities");
 
 		// music haha
-		if (FlxG.sound.music == null)
+		if (FlxG.sound.music == null && _settingsSave.data.settings[1] == true)
+		{
 			FlxG.sound.playMusic("assets/music/Eric Skiff - Underclocked.wav");
-		FlxG.sound.music.volume = 0.5;
+			FlxG.sound.music.volume = 0.5;
+		}
 
 		// other things
 

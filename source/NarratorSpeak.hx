@@ -25,14 +25,14 @@ class NarratorSpeak extends FlxSpriteGroup
 		typeText = new FlxTypeText(0, 300, 500, lines[curPart]);
 		typeText.setFormat('assets/data/fonts/karma.TTF', 40, FlxColor.BLACK, CENTER);
 		typeText.screenCenter(X);
-		typeText.antialiasing = true;
+		// typeText.antialiasing = true;
 		typeText.setBorderStyle(OUTLINE, FlxColor.WHITE, 2);
 		typeText.sounds = [FlxG.sound.load('assets/sounds/dialogBeep.wav')];
 
 		doneText = new FlxText(0, typeText.y - 25, "Press ENTER to continue");
 		doneText.setFormat('assets/data/fonts/karma.TTF', 20, FlxColor.BLACK, CENTER);
 		doneText.screenCenter(X);
-		doneText.antialiasing = true;
+		// doneText.antialiasing = true;
 		doneText.setBorderStyle(OUTLINE, FlxColor.WHITE, 2);
 		add(doneText);
 		add(typeText);

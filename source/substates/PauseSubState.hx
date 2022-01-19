@@ -39,7 +39,7 @@ class PauseSubState extends FlxSubState
 		{
 			var _daOption:FlxText = new FlxText(0, pausedText.y + 95 + i * 50, FlxG.width, options[i]);
 			_daOption.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, CENTER);
-			_daOption.antialiasing = true;
+			// _daOption.antialiasing = true;
 			_daOption.alpha = 0.5;
 			_daOption.screenCenter(X);
 			_daOption.scrollFactor.set(0, 0);

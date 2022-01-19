@@ -39,7 +39,7 @@ class Player extends FlxSprite
 		frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
 		scale.set(0.3, 0.3);
 		setSize(42.9, 108.9);
-		antialiasing = true;
+		// antialiasing = true;
 		animation.play('idle');
 
 		animation.addByPrefix('idle', 'idle', 24, true);

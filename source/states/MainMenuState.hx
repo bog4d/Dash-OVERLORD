@@ -9,6 +9,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import lime.app.Application;
 
 class MainMenuState extends FlxState
@@ -22,17 +23,24 @@ class MainMenuState extends FlxState
 
 	var optionGroup:FlxTypedGroup<FlxText>;
 	#if !debug
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Donate'];
+	var txtOptions:Array<String> = ['Play', 'Level select', 'Options', 'Credits', 'Donate'];
 	#else
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Donate', 'animation debug menu'];
+	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Options', 'Donate', 'animation debug menu'];
 	#end
 	var curSelected:Int;
+
+	var _settingsSave:FlxSave;
 
 	override public function create()
 	{
 		#if windows
 		txtOptions.insert(txtOptions.length + 1, 'Quit');
 		#end
+
+		_settingsSave = new FlxSave();
+		_settingsSave.bind('Settings');
+
+		camera.antialiasing = _settingsSave.data.settings[2];
 
 		FlxG.fixedTimestep = false;
 		FlxG.mouse.visible = false;
@@ -49,14 +57,14 @@ class MainMenuState extends FlxState
 			_daOption.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, FlxTextAlign.LEFT);
 			_daOption.bold = true;
 			_daOption.alpha = 0.5;
-			_daOption.antialiasing = true;
+			// _daOption.antialiasing = true;
 
 			optionGroup.add(_daOption);
 		}
 
 		daG = new FlxSprite(800, 250);
 		daG.flipX = true;
-		daG.antialiasing = true;
+		// daG.antialiasing = true;
 		daG.scale.set(1.7, 1.7);
 		daG.frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
 		daG.animation.addByPrefix('standingLikeAMenace', 'idle', 24, true);
@@ -68,7 +76,7 @@ class MainMenuState extends FlxState
 		add(daG);
 		add(fade);
 		var menuLogo:FlxSprite = new FlxSprite().loadGraphic('assets/images/menuLogo.png');
-		menuLogo.antialiasing = true;
+		// menuLogo.antialiasing = true;
 		add(menuLogo);
 		add(optionGroup);
 		add(new FlxText(10, 670, FlxG.width, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
@@ -128,6 +136,12 @@ class MainMenuState extends FlxState
 						{
 							FlxG.switchState(new LevelSelectState());
 						});
+					case 'options':
+						FlxG.sound.play('assets/sounds/confirm.ogg');
+						camera.fade(FlxColor.BLACK, 0.5, false, function()
+						{
+							FlxG.switchState(new OptionsState());
+						});
 
 					case 'credits':
 						FlxG.sound.play('assets/sounds/confirm.ogg');
@@ -158,6 +172,7 @@ class MainMenuState extends FlxState
 						});
 					default:
 						FlxG.sound.play('assets/sounds/confirm.ogg');
+						FlxG.log.warn('This button does nothing. Did you put it in the switch case?');
 				}
 				selectBtnAnim();
 			}
