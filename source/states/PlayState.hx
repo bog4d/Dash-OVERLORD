@@ -7,6 +7,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.editors.ogmo.FlxOgmo3Loader;
+import flixel.addons.effects.FlxTrail;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
 import flixel.tweens.FlxEase;
@@ -14,7 +15,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxSave;
 import flixel.util.FlxTimer;
-import lime.utils.Assets;
 
 class PlayState extends FlxState
 {
@@ -35,6 +35,7 @@ class PlayState extends FlxState
 	var plrSpawnPos:Array<Float> = [0, 0];
 
 	var player:Player;
+	var plrDashTrail:FlxTrail;
 	var tpEnter:FlxSprite;
 	var tpExit:FlxSprite;
 	var exitDoor:FlxSprite;
@@ -42,6 +43,7 @@ class PlayState extends FlxState
 
 	var GameCam:FlxCamera;
 	var UIcam:FlxCamera;
+	var hud:HUD;
 
 	public static var isMedalLocked:Bool;
 	public static var deaths:Int;
@@ -50,6 +52,7 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		//-----[IMPORTANT STUFF]-----\\
 		_settingsSave = new FlxSave();
 		_settingsSave.bind('Settings');
 
@@ -58,7 +61,7 @@ class PlayState extends FlxState
 		FlxG.watch.addQuick('LevelID', LevelID);
 		canTP = true;
 		exitDoorDebounce = false;
-
+		//-----[CAMERA STUFF]-----\\
 		GameCam = new FlxCamera();
 		UIcam = new FlxCamera();
 
@@ -67,11 +70,15 @@ class PlayState extends FlxState
 		FlxCamera.defaultCameras = [GameCam];
 
 		UIcam.bgColor.alpha = 0;
+		hud = new HUD();
+		hud.cameras = [UIcam];
 
 		GameCam.antialiasing = _settingsSave.data.settings[2];
 		UIcam.antialiasing = _settingsSave.data.settings[2];
 
+		//-----[ENTITIES]-----\\
 		player = new Player();
+		plrDashTrail = new FlxTrail(player);
 		spikeGroup = new FlxTypedGroup<Spike>();
 		lostSoulGroup = new FlxTypedGroup<LostSoul>();
 
@@ -102,7 +109,9 @@ class PlayState extends FlxState
 		add(lostSoulGroup);
 		add(exitDoor);
 		add(player);
-
+		add(plrDashTrail);
+		// ui
+		add(hud);
 		GameCam.follow(player, _settingsSave.data.settings[0], 0.05);
 		//----------------\\
 		super.create(); // da super.create() :O
@@ -178,6 +187,11 @@ class PlayState extends FlxState
 
 		if (FlxG.collide(player, spikeGroup))
 			plrHit();
+
+		if (Player.isDashing)
+			plrDashTrail.visible = true;
+		else
+			plrDashTrail.visible = false;
 
 		//-----[TP PORTALS]-----\\
 		if (FlxG.overlap(player, tpEnter) && canTP)
@@ -332,14 +346,11 @@ class PlayState extends FlxState
 		FlxG.watch.addQuick('Deaths', deaths);
 		player.setPosition(plrSpawnPos[0], plrSpawnPos[1]);
 		Player.MovementEnabled = false;
-		player.acceleration.x = 0;
-		player.velocity.x = 0;
-		player.flipX = false;
+		player.animation.stop();
+		player.fsm.activeState = player.hit;
 		FlxG.sound.play('assets/sounds/ouch.wav');
 		FlxG.camera.shake(0.05, 0.1);
 		camera.flash(FlxColor.RED, 0.5);
-		player.animation.stop();
-		player.animation.play('respawn', true);
 
 		new FlxTimer().start(0.7, function(tmr:FlxTimer)
 		{
@@ -355,7 +366,8 @@ class PlayState extends FlxState
 				player.screenCenter(X);
 				var daPopup:Popup = new Popup("Eric Skiff - Underclocked"); // this tune is a banger aaaaaAAAAAAAAA
 				daPopup.cameras = [UIcam];
-				add(daPopup);
+				if (_settingsSave.data.settings[1] == true)
+					add(daPopup);
 
 				player.animation.play('wake', true);
 				GameCam.zoom = 2;
