@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.addons.effects.FlxTrail;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.input.keyboard.FlxKey;
+import flixel.math.FlxMath;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 
@@ -13,12 +14,14 @@ class Player extends FlxSprite
 {
 	public static var MovementEnabled:Bool;
 
+	public var fsm:FSM;
+
 	var rightKeys:Array<FlxKey> = ["RIGHT", "D"];
 	var leftKeys:Array<FlxKey> = ["LEFT", "A"];
 	var jumpKeys:Array<FlxKey> = ["SPACE", "W", "UP"];
 	var dashKeys:Array<FlxKey> = ["Z", "SHIFT"];
 
-	var _acceleration = 600;
+	final _acceleration = 600;
 
 	var dashCooldown:Bool;
 
@@ -51,46 +54,63 @@ class Player extends FlxSprite
 
 		acceleration.y = PlayState.GRAVITY;
 		maxVelocity.x = daSpeed; // basically the max speed :)
+		drag.x = _acceleration * 5;
 		hitboxFix();
+
+		fsm = new FSM(idle);
+
+		animation.finishCallback = function(animName:String)
+		{
+			if (animName == 'respawn')
+			{
+				fsm.activeState = idle;
+				MovementEnabled = true;
+			}
+		}
 	}
 
 	override public function update(elapsed:Float)
 	{
 		FlxG.watch.addQuick('Player location', getPosition());
 		// this update function makes me wanna cry :/
+
 		if (MovementEnabled)
 		{
-			if (FlxG.keys.anyPressed(rightKeys))
-			{
-				acceleration.x = _acceleration;
-				flipX = false;
-				animation.play('walk');
-			}
-			else if (FlxG.keys.anyPressed(leftKeys))
-			{
-				acceleration.x = -_acceleration;
-				flipX = true;
-				animation.play('walk');
-			}
-			else
-			{
-				acceleration.x = 0;
-				velocity.x = 0;
-				animation.play('idle');
-			}
+			/*
+				if (FlxG.keys.anyPressed(rightKeys))
+				{
+					acceleration.x = _acceleration;
+					flipX = false;
+					animation.play('walk');
+				}
+				else if (FlxG.keys.anyPressed(leftKeys))
+				{
+					acceleration.x = -_acceleration;
+					flipX = true;
+					animation.play('walk');
+				}
+				else
+				{
+					acceleration.x = 0;
+					velocity.x = 0;
+					animation.play('idle');
+				}
+			 */
 
 			if (FlxG.keys.anyJustPressed(jumpKeys) && isTouching(FlxObject.FLOOR))
 				velocity.y = -PlayState.GRAVITY / 2;
 		}
 
 		// Dashin'
-		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown && MovementEnabled) // i am aware of the "LongDash" thingy ok
+		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown && MovementEnabled)
 		{
+			scale.x = 0.6; // cool thing (handled by lerp)
+
 			MovementEnabled = false;
 			isDashing = true;
 
 			animation.play('slash', true);
-			var dashSpeed = 2000;
+			final dashSpeed = 2200;
 			maxVelocity.x = dashSpeed;
 
 			dashWait(0.5);
@@ -102,12 +122,14 @@ class Player extends FlxSprite
 			else
 				velocity.x = -dashSpeed;
 		}
+		fsm.update(elapsed);
 		super.update(elapsed);
 
 		FlxG.watch.addQuick('playerVelocity X', velocity.x);
 		FlxG.watch.addQuick('Movement enabled', MovementEnabled);
 		hitboxFix();
 
+		scale.set(FlxMath.lerp(scale.x, 0.3, 15 * elapsed), FlxMath.lerp(scale.y, 0.3, 15 * elapsed));
 		/*
 			if (NarratorSpeak.isInProgress)
 			{
@@ -194,5 +216,51 @@ class Player extends FlxSprite
 			if (animation.curAnim.name == 'walk' && flipX)
 				offset.x = 73.1;
 		 */
+	}
+
+	//-----[STATES]-----\\
+	function idle(elapsed:Float)
+	{
+		final allMoveKeys:Array<FlxKey> = leftKeys.concat(rightKeys); // oooo this concat thing is neat
+		acceleration.x = 0;
+
+		if (MovementEnabled)
+		{
+			animation.play('idle');
+			if (FlxG.keys.anyPressed(allMoveKeys))
+				fsm.activeState = move;
+		}
+	}
+
+	function move(elapsed:Float)
+	{
+		if (FlxG.keys.anyPressed(rightKeys))
+		{
+			acceleration.x = _acceleration;
+			flipX = false;
+			animation.play('walk');
+		}
+		else if (FlxG.keys.anyPressed(leftKeys))
+		{
+			acceleration.x = -_acceleration;
+			flipX = true;
+			animation.play('walk');
+		}
+		else
+			fsm.activeState = idle;
+
+		if (!MovementEnabled)
+			fsm.activeState = idle;
+
+		if (!MovementEnabled && isDashing)
+			animation.play('slash', true);
+	}
+
+	public function hit(elapsed:Float)
+	{
+		acceleration.x = 0;
+		velocity.x = 0;
+		flipX = false;
+		animation.play('respawn');
 	}
 }
