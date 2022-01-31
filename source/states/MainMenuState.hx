@@ -3,8 +3,10 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -18,18 +20,20 @@ class MainMenuState extends FlxState
 
 	var UIusable:Bool;
 	var fade:FlxSprite;
-	var daG:FlxSprite;
 	var version = Application.current.meta.get('version');
 
 	var optionGroup:FlxTypedGroup<FlxText>;
 	#if !debug
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Options', 'Credits', 'Donate'];
+	var txtOptions:Array<String> = ['New Game', 'Level select', 'Options', 'Credits', 'Donate'];
 	#else
-	var txtOptions:Array<String> = ['Play', 'Level select', 'Credits', 'Options', 'Donate', 'animation debug menu'];
+	var txtOptions:Array<String> = ['New Game', 'Level select', 'Credits', 'Options', 'Donate', 'anim debug'];
 	#end
 	var curSelected:Int;
 
 	var _settingsSave:FlxSave;
+
+	var bg1:FlxSprite;
+	var bg2:FlxSprite;
 
 	override public function create()
 	{
@@ -48,13 +52,10 @@ class MainMenuState extends FlxState
 		curSelected = 0;
 		optionGroup = new FlxTypedGroup<FlxText>();
 
-		fade = new FlxSprite().loadGraphic('assets/images/menuFade.png');
-		fade.color = FlxColor.BLACK;
-
 		for (i in 0...txtOptions.length)
 		{
-			var _daOption:FlxText = new FlxText(50, 300 + i * 55, FlxG.width, txtOptions[i]);
-			_daOption.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, FlxTextAlign.LEFT);
+			var _daOption:FlxText = new FlxText(-340, 300 + i * 55, FlxG.width, txtOptions[i]);
+			_daOption.setFormat('assets/data/fonts/karma.TTF', 50, FlxColor.WHITE, CENTER);
 			_daOption.bold = true;
 			_daOption.alpha = 0.5;
 			// _daOption.antialiasing = true;
@@ -62,27 +63,26 @@ class MainMenuState extends FlxState
 			optionGroup.add(_daOption);
 		}
 
-		daG = new FlxSprite(800, 250);
-		daG.flipX = true;
-		// daG.antialiasing = true;
-		daG.scale.set(1.7, 1.7);
-		daG.frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
-		daG.animation.addByPrefix('standingLikeAMenace', 'idle', 24, true);
-		daG.animation.play('standingLikeAMenace');
-
+		bg1 = new FlxSprite(-295, -50).loadGraphic('assets/images/menu/1.png');
+		bg2 = new FlxSprite(-280).loadGraphic('assets/images/menu/2.png');
 		// Layering
-
-		add(new FlxSprite().loadGraphic('assets/images/menuBg.png'));
-		add(daG);
-		add(fade);
-		var menuLogo:FlxSprite = new FlxSprite().loadGraphic('assets/images/menuLogo.png');
-		// menuLogo.antialiasing = true;
-		add(menuLogo);
+		var daBackDrop = new FlxBackdrop('assets/images/backdrop.png', 0.5, 0.5);
+		daBackDrop.velocity.set(10, -10);
+		add(daBackDrop);
+		add(bg2);
+		add(bg1);
+		var vignette = new FlxSprite().loadGraphic('assets/images/vignette.png');
+		vignette.color = 0x000000;
+		add(vignette);
+		add(new FlxSprite(120).makeGraphic(380, 720, 0x64000000));
+		add(new FlxSprite().loadGraphic('assets/images/menuLogo.png'));
 		add(optionGroup);
 		add(new FlxText(10, 670, FlxG.width, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
 
+		//------------------\\
 		super.create();
 		camera.bgColor = FlxColor.WHITE;
+		//------------------\\
 		camera.fade(FlxColor.BLACK, 0.5, true, function()
 		{
 			UIusable = true;
@@ -108,7 +108,7 @@ class MainMenuState extends FlxState
 				UIusable = false;
 				switch (txtOptions[curSelected].toLowerCase())
 				{
-					case 'play':
+					case 'new game':
 						PlayState.deaths = 0;
 						PlayState.fromLvSelect = false;
 						PlayState.LevelID = 0;
@@ -149,7 +149,7 @@ class MainMenuState extends FlxState
 						{
 							FlxG.switchState(new CreditsState());
 						});
-					case 'animation debug menu':
+					case 'anim debug':
 						FlxG.sound.play('assets/sounds/confirm.ogg');
 						camera.fade(FlxColor.BLACK, 0.5, false, function()
 						{
@@ -177,6 +177,9 @@ class MainMenuState extends FlxState
 				selectBtnAnim();
 			}
 		}
+
+		bg1.y = FlxMath.lerp(bg1.y, -150 * curSelected / 10 - 270, 2 * elapsed);
+		bg2.y = FlxMath.lerp(bg2.y, -50 * curSelected / 10 - 200, 2 * elapsed);
 	}
 
 	function changeSelection(skips:Int)
