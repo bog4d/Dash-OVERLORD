@@ -297,9 +297,48 @@
       "values": [
         {"name": "Lines", "definition": "Text", "display": 0, "defaults": ""}
       ]
+    },
+    {
+      "exportID": "61430941",
+      "name": "endLevelAnimationCutscene",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#9aff00ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [
+        {"name": "CutsceneID", "definition": "Integer", "display": 1, "defaults": 0, "bounded": false, "min": 0, "max": 100},
+        {"name": "ObjectHeight", "definition": "Integer", "display": 0, "defaults": 0, "bounded": false, "min": 0, "max": 100}
+      ]
     }
   ],
   "tilesets": [
-    {"label": "tileset", "path": "../../images/tileset.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAQCAYAAABQrvyxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAA7SURBVEhL7c+xCQAwDANBKbNnb6fxBHYhAn+NOsG7qrRhe3cg3d6R0/stAtIISCMgjYA0AtIISCMgS3qt3gSjcdbRNwAAAABJRU5ErkJggg==", "tileWidth": 16, "tileHeight": 16, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
+    {"label": "tileset", "path": "../../images/tileset.png", "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAAAQCAYAAADOFPsRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAADISURBVFhH5dPLEoIwDIXhxPd253vXwelxdARsc3oj+TfZQAp8g6aUhElVuQUijzyt3fO0hGfXPC2x7091yzNinx+eQWDw2TQq4B7Y1RBfZ0YEPIO6CuL7rGiAJUCrI36dEQmwBmZVxJ/dUQAtIKsh7u6MAMhArIJ4uMs7IAOAZiOe7vAM2AIPzUL8e69XwJZ4aDRi0T0eAXvgoVGIxdd6A+yJh3ojVv2tngBH4KFeiFV4W14AR+Kh1ojVeFseAGfgoVaIJjwRkSfHQyUfDU28BAAAAABJRU5ErkJggg==", "tileWidth": 16, "tileHeight": 16, "tileSeparationX": 0, "tileSeparationY": 0, "tileMarginX": 0, "tileMarginY": 0}
   ]
 }

@@ -2,10 +2,11 @@ package;
 
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
+import flixel.util.FlxColor;
 
 class HUD extends FlxSpriteGroup
 {
-	var _vignette:FlxSprite;
+	public var _vignette:FlxSprite;
 
 	public function new()
 	{
@@ -19,5 +20,7 @@ class HUD extends FlxSpriteGroup
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		_vignette.color = FlxColor.interpolate(_vignette.color, 0x000000, 2 * elapsed);
 	}
 }

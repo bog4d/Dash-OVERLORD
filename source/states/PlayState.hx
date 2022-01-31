@@ -8,6 +8,7 @@ import flixel.FlxState;
 import flixel.addons.display.FlxBackdrop;
 import flixel.addons.editors.ogmo.FlxOgmo3Loader;
 import flixel.addons.effects.FlxTrail;
+import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.tile.FlxTilemap;
 import flixel.tweens.FlxEase;
@@ -40,6 +41,10 @@ class PlayState extends FlxState
 	var tpExit:FlxSprite;
 	var exitDoor:FlxSprite;
 	var dialogEvent:FlxSprite;
+	var endLevelAnimationTrigger:FlxSprite;
+
+	// cutscene sprites
+	var hitSprite:FlxSprite;
 
 	var GameCam:FlxCamera;
 	var UIcam:FlxCamera;
@@ -55,7 +60,6 @@ class PlayState extends FlxState
 		//-----[IMPORTANT STUFF]-----\\
 		_settingsSave = new FlxSave();
 		_settingsSave.bind('Settings');
-
 		FlxG.fixedTimestep = false;
 		FlxTimer.globalManager.active = true;
 		FlxG.watch.addQuick('LevelID', LevelID);
@@ -99,17 +103,25 @@ class PlayState extends FlxState
 		level.setTileProperties(4, FlxObject.ANY);
 		level.setTileProperties(5, FlxObject.ANY);
 		level.setTileProperties(6, FlxObject.ANY);
-		//-------------------------\\
-		// LAYERING
+		//-----[LAYERING]-----\\
 		var daBackDrop = new FlxBackdrop('assets/images/backdrop.png', 0.5, 0.5);
 		daBackDrop.velocity.set(10, -10);
 		add(daBackDrop);
+		//--------\\
+		if (LevelID == 9)
+		{
+			hitSprite = new FlxSprite();
+			hitSprite.frames = FlxAtlasFrames.fromSparrow('assets/images/spikeHit.png', 'assets/images/spikeHit.xml');
+			hitSprite.animation.addByPrefix('die?', 'hit', 24, false);
+			add(hitSprite);
+		}
+		//---------\\
 		add(level);
 		add(spikeGroup);
 		add(lostSoulGroup);
 		add(exitDoor);
-		add(player);
 		add(plrDashTrail);
+		add(player);
 		// ui
 		add(hud);
 		GameCam.follow(player, _settingsSave.data.settings[0], 0.05);
@@ -135,6 +147,9 @@ class PlayState extends FlxState
 			}
 			else if (!NarratorSpeak.isInProgress)
 				Player.MovementEnabled = true;
+
+			if (LevelID == 9)
+				hitSprite.visible = false;
 		});
 
 		if (!fromLvSelect)
@@ -215,7 +230,7 @@ class PlayState extends FlxState
 			if (!exitDoorDebounce)
 			{
 				exitDoorDebounce = true;
-				if (LevelID++ > maxLevels - 1)
+				if (LevelID + 1 > maxLevels)
 				{
 					if (!fromLvSelect)
 					{
@@ -230,6 +245,7 @@ class PlayState extends FlxState
 				{
 					if (!fromLvSelect)
 					{
+						LevelID++;
 						FlxG.camera.fade(FlxColor.BLACK, 0.2, false, function() FlxG.resetState());
 					}
 					else
@@ -250,18 +266,29 @@ class PlayState extends FlxState
 				Player.MovementEnabled = false;
 				player.velocity.x = 0;
 				player.acceleration.x = 0;
-				player.animation.play('idle');
 				add(daNewDialog);
+				player.animation.stop();
+				player.animation.play('idle');
 			}
 		}
+
+		//-----[DIALOG EVENT]-----\\
+		if (FlxG.overlap(player, endLevelAnimationTrigger))
+		{
+			if (!fromLvSelect)
+			{
+				endLevelAnimationTrigger.kill();
+				endLvAnimCutsceneTriggerHit();
+			}
+		}
+
 		#if debug
 		if (FlxG.keys.justPressed.R)
-		{
 			plrHit();
-		}
-		#end
 
-		#if debug // level skip :>
+		if (FlxG.keys.justPressed.N)
+			Player.MovementEnabled = true;
+
 		if (FlxG.keys.justPressed.G)
 			player.setPosition(exitDoor.x, exitDoor.y);
 		#end
@@ -337,6 +364,15 @@ class PlayState extends FlxState
 				dialogEvent.setPosition(entX - dialogEvent.width / 2 + 16, entY - dialogEvent.height + 16);
 				Player.MovementEnabled = false;
 				add(dialogEvent);
+			case 'endlevelanimationcutscene':
+				if (!fromLvSelect)
+				{
+					endLevelAnimationTrigger = new FlxSprite(entX, entY + 16);
+					endLevelAnimationTrigger.makeGraphic(15, epicEntity.values.ObjectHeight, FlxColor.TRANSPARENT);
+					endLevelAnimationTrigger.y -= endLevelAnimationTrigger.height;
+					endLevelAnimationTrigger.ID = epicEntity.values.CutsceneID;
+					add(endLevelAnimationTrigger);
+				}
 		}
 	}
 
@@ -396,6 +432,56 @@ class PlayState extends FlxState
 				watText.x += 400;
 				watText.y -= 20;
 				add(watText);
+		}
+	}
+
+	function endLvAnimCutsceneTriggerHit()
+	{
+		player.kill();
+		Player.MovementEnabled = false;
+		GameCam.follow(hitSprite, PLATFORMER, 0.17);
+		GameCam.targetOffset.y = -200;
+		switch (endLevelAnimationTrigger.ID)
+		{
+			case 1:
+				if (FlxG.sound.music != null)
+					FlxG.sound.music.fadeOut(2, 0);
+
+				FlxG.sound.play('assets/sounds/EarRinging.ogg');
+				hud._vignette.color = 0xFF0000;
+				GameCam.shake(0.01, 0.1);
+				FlxG.sound.play('assets/sounds/ouch.wav');
+				hitSprite.visible = true;
+				hitSprite.scale.set(0.3, 0.3);
+				hitSprite.updateHitbox();
+				hitSprite.setPosition(endLevelAnimationTrigger.x
+					- endLevelAnimationTrigger.width / 2
+					- 30,
+					endLevelAnimationTrigger.y
+					+ endLevelAnimationTrigger.height
+					- 120);
+				hitSprite.animation.play('die?');
+
+				FlxTween.tween(GameCam, {zoom: 1.5}, 0.5, {
+					ease: FlxEase.circOut,
+					onComplete: function(twn:FlxTween) hud._vignette.color = 0xFF0000
+				});
+
+				hitSprite.animation.finishCallback = function(a:String)
+				{
+					FlxTween.tween(GameCam, {zoom: 1.7}, 5, {
+						ease: FlxEase.sineIn,
+					});
+
+					GameCam.fade(0x000000, 5, false, function()
+					{
+						new FlxTimer().start(3, function(tmr:FlxTimer)
+						{
+							LevelID++;
+							FlxG.resetState();
+						});
+					});
+				}
 		}
 	}
 
