@@ -98,13 +98,16 @@ class Player extends FlxSprite
 			 */
 
 			if (FlxG.keys.anyJustPressed(jumpKeys) && isTouching(FlxObject.FLOOR))
+			{
 				velocity.y = -PlayState.GRAVITY / 2;
+				scale.set(0.25, 0.35);
+			}
 		}
 
 		// Dashin'
 		if (FlxG.keys.anyJustPressed(dashKeys) && !dashCooldown && MovementEnabled)
 		{
-			scale.x = 0.6; // cool thing (handled by lerp)
+			scale.x = 0.8; // cool thing (handled by lerp)
 
 			MovementEnabled = false;
 			isDashing = true;
