@@ -105,6 +105,10 @@ class PlayState extends FlxState
 		level.setTileProperties(6, FlxObject.ANY);
 		//-----[LAYERING]-----\\
 		var daBackDrop = new FlxBackdrop('assets/images/backdrop.png', 0.5, 0.5);
+
+		if (LevelID >= 10)
+			daBackDrop.loadGraphic('assets/images/backdrop2.png');
+
 		daBackDrop.velocity.set(10, -10);
 		add(daBackDrop);
 		//--------\\
@@ -477,8 +481,12 @@ class PlayState extends FlxState
 					{
 						new FlxTimer().start(3, function(tmr:FlxTimer)
 						{
-							LevelID++;
-							FlxG.resetState();
+							FlxG.switchState(new VideoState('cutscene1', function()
+							{
+								LevelID++;
+								FlxG.switchState(new PlayState());
+								FlxG.log.notice('Begin ACT2');
+							}));
 						});
 					});
 				}
