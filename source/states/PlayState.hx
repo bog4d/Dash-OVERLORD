@@ -128,11 +128,12 @@ class PlayState extends FlxState
 		add(player);
 		// ui
 		add(hud);
-		GameCam.follow(player, _settingsSave.data.settings[0], 0.05);
+		GameCam.follow(player, _settingsSave.data.settings[0], 0.01);
 		//----------------\\
 		super.create(); // da super.create() :O
 		//----------------\\
 		map.loadEntities(placeDaEntities, "entities");
+		GameCam.scroll.set(player.x - FlxG.width / 2, player.y - FlxG.width / 2);
 
 		// music haha
 		if (FlxG.sound.music == null && _settingsSave.data.settings[1] == true)
@@ -392,6 +393,7 @@ class PlayState extends FlxState
 		FlxG.camera.shake(0.05, 0.1);
 		camera.flash(FlxColor.RED, 0.5);
 
+		GameCam.scroll.set(player.x - FlxG.width / 2, player.y - FlxG.width / 2);
 		new FlxTimer().start(0.7, function(tmr:FlxTimer)
 		{
 			Player.MovementEnabled = true; // this is so death animation can play :O
@@ -411,17 +413,19 @@ class PlayState extends FlxState
 
 				player.animation.play('wake', true);
 				GameCam.zoom = 2;
-				GameCam.y -= 100;
 
 				FlxG.sound.play('assets/sounds/wakeUp.ogg', 0.5);
 
-				FlxTween.tween(GameCam, {zoom: 1, y: 0, x: 0}, 7, {
+				FlxTween.tween(GameCam, {zoom: 1}, 7, {
 					ease: FlxEase.cubeInOut,
 					onComplete: function(twn:FlxTween)
 					{
-						var watText:NarratorSpeak = new NarratorSpeak('Start');
-						watText.cameras = [UIcam];
-						add(watText);
+						Player.MovementEnabled = true;
+						/*
+							var watText:NarratorSpeak = new NarratorSpeak('Start');
+							watText.cameras = [UIcam];
+							add(watText);
+						 */
 					}
 				});
 			case 1:
@@ -481,7 +485,7 @@ class PlayState extends FlxState
 					{
 						new FlxTimer().start(3, function(tmr:FlxTimer)
 						{
-							FlxG.switchState(new VideoState('cutscene1', function()
+							FlxG.switchState(new VideoState('act2', function()
 							{
 								LevelID++;
 								FlxG.switchState(new PlayState());
