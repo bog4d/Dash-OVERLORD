@@ -34,21 +34,12 @@ class VideoState extends FlxState
 
 		video.play();
 		var buttonsY = FlxG.height - 30;
-		add(new FlxButton(10, buttonsY, "PLAY", () ->
-		{
-			video.play();
-		}));
 
 		// todo, after some edits to WebmPlayer?
 		// add(new FlxButton(100, buttonsY, "STOP", () ->
 		// {
 		// 	video.stop();
 		// }));
-
-		add(new FlxButton(190, buttonsY, "RESTART", () ->
-		{
-			video.restart();
-		}));
 		#else
 		FlxG.addChildBelowMouse(new Mp4Video(videoName, function()
 		{

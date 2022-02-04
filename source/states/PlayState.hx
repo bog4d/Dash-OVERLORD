@@ -15,6 +15,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxSave;
+import flixel.util.FlxSpriteUtil;
 import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
@@ -105,12 +106,16 @@ class PlayState extends FlxState
 		level.setTileProperties(6, FlxObject.ANY);
 		//-----[LAYERING]-----\\
 		var daBackDrop = new FlxBackdrop('assets/images/backdrop.png', 0.5, 0.5);
+		var frontClouds = new FlxBackdrop('assets/images/CloudThing.png', 1.5, 1.5);
+		frontClouds.velocity.set(5, 0);
+		frontClouds.useScaleHack = false;
 
-		if (LevelID >= 10)
+		if (LevelID >= 20)
 			daBackDrop.loadGraphic('assets/images/backdrop2.png');
 
 		daBackDrop.velocity.set(10, -10);
 		add(daBackDrop);
+
 		//--------\\
 		if (LevelID == 9)
 		{
@@ -126,6 +131,7 @@ class PlayState extends FlxState
 		add(exitDoor);
 		add(plrDashTrail);
 		add(player);
+		add(frontClouds);
 		// ui
 		add(hud);
 		GameCam.follow(player, _settingsSave.data.settings[0], 0.01);
@@ -313,6 +319,15 @@ class PlayState extends FlxState
 				player.setPosition(entX - player.width / 2, entY - player.height + 16);
 				plrSpawnPos[0] = entX - player.width / 2;
 				plrSpawnPos[1] = entY - player.height + 16;
+
+			/*
+				var _door:FlxSprite = new FlxSprite().makeGraphic(286, 445, FlxColor.BLACK);
+				_door.scale.set(0.3, 0.3);
+				_door.updateHitbox();
+				_door.setPosition(entX - _door.width / 2, entY - _door.height + 16);
+				add(_door);
+				FlxSpriteUtil.fadeOut(_door, 3);
+			 */
 
 			case 'spike':
 				var spike:Spike = new Spike();

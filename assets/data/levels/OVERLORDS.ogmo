@@ -9,12 +9,12 @@
   "layerGridDefaultSize": {"x": 16, "y": 16},
   "levelDefaultSize": {"x": 320, "y": 240},
   "levelMinSize": {"x": 1280, "y": 720},
-  "levelMaxSize": {"x": 2560, "y": 1440},
+  "levelMaxSize": {"x": 5120, "y": 2880},
   "levelValues": [],
   "defaultExportMode": ".json",
   "compactExport": false,
   "externalScript": "",
-  "playCommand": "",
+  "playCommand": "lime build ../../../Project.xml html5 -debug -D lv",
   "entityTags": [],
   "layers": [
     {

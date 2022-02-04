@@ -22,7 +22,12 @@ class IntroState extends FlxState
 
 	override public function create()
 	{
+		#if !debug
 		MainMenuState.firstPlay = true;
+		#else
+		MainMenuState.firstPlay = false;
+		#end
+
 		FlxG.mouse.visible = false;
 
 		// SAVE DATA (Btw SoLo is pateu)
@@ -59,7 +64,11 @@ class IntroState extends FlxState
 		#if !debug
 		rollIntro();
 		#else
+		#if !lv
 		FlxG.switchState(new MainMenuState());
+		#else
+		FlxG.switchState(new LevelSelectState());
+		#end
 		#end
 	}
 

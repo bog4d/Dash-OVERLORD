@@ -8,7 +8,8 @@ import flixel.util.FlxColor;
 
 class LostSoul extends FlxSprite
 {
-	var speed = -200;
+	final speed = -200;
+	var fsm:FSM;
 
 	public function new()
 	{
@@ -21,13 +22,41 @@ class LostSoul extends FlxSprite
 		setSize(40.9, 108.9);
 		acceleration.y = PlayState.GRAVITY;
 		animation.addByPrefix('walk', 'walk', 24, true);
-		animation.play('walk');
 		hitboxFix();
+
+		// FSM
+		fsm = new FSM(move);
 	}
 
 	override public function update(elapsed:Float)
 	{
-		FlxG.watch.addQuick("lost soul velocity x", velocity.x);
+		if (isTouching(FlxObject.UP) && isTouching(FlxObject.FLOOR))
+		{
+			velocity.y = -PlayState.GRAVITY / 3;
+		}
+
+		fsm.update(elapsed);
+		super.update(elapsed);
+	}
+
+	function hitboxFix()
+	{
+		if (animation.curAnim.name == 'walk' && !flipX)
+			offset.x = 71.1;
+
+		if (animation.curAnim.name == 'walk' && flipX)
+			offset.x = 90.1;
+	}
+
+	//-----[STATES]-----\\
+	function idle(elapsed:Float)
+	{
+		animation.play('idle');
+	}
+
+	function move(elapsed:Float)
+	{
+		animation.play('walk'); // update the current animation (It's too choppy :/)
 		if (isTouching(FlxObject.RIGHT))
 		{
 			velocity.x = speed;
@@ -40,20 +69,5 @@ class LostSoul extends FlxSprite
 			flipX = false;
 			hitboxFix();
 		}
-		if (isTouching(FlxObject.UP) && isTouching(FlxObject.FLOOR))
-		{
-			velocity.y = -PlayState.GRAVITY / 3;
-		}
-
-		super.update(elapsed);
-	}
-
-	function hitboxFix()
-	{
-		if (animation.curAnim.name == 'walk' && !flipX)
-			offset.x = 71.1;
-
-		if (animation.curAnim.name == 'walk' && flipX)
-			offset.x = 90.1;
 	}
 }
