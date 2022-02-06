@@ -33,6 +33,7 @@ class PlayState extends FlxState
 	var level:FlxTilemap;
 	var spikeGroup:FlxTypedGroup<Spike>;
 	var lostSoulGroup:FlxTypedGroup<LostSoul>;
+	var jumpPadGroup:FlxTypedGroup<JumpPad>;
 
 	var plrSpawnPos:Array<Float> = [0, 0];
 
@@ -86,6 +87,7 @@ class PlayState extends FlxState
 		plrDashTrail = new FlxTrail(player);
 		spikeGroup = new FlxTypedGroup<Spike>();
 		lostSoulGroup = new FlxTypedGroup<LostSoul>();
+		jumpPadGroup = new FlxTypedGroup<JumpPad>();
 
 		exitDoor = new FlxSprite().loadGraphic('assets/images/ExitDoor.png');
 		exitDoor.scale.set(0.3, 0.3);
@@ -128,6 +130,7 @@ class PlayState extends FlxState
 		add(level);
 		add(spikeGroup);
 		add(lostSoulGroup);
+		add(jumpPadGroup);
 		add(exitDoor);
 		add(plrDashTrail);
 		add(player);
@@ -213,6 +216,24 @@ class PlayState extends FlxState
 
 		if (FlxG.collide(player, spikeGroup))
 			plrHit();
+
+		for (pad in jumpPadGroup)
+		{
+			if (FlxG.overlap(player, pad) && !pad.cooldown)
+			{
+				pad.cooldown = true;
+				player.velocity.y = -pad.launchForce;
+				FlxG.sound.play('assets/sounds/padJump.wav');
+				FlxG.camera.shake(0.01, 0.1);
+				FlxG.sound.play('assets/sounds/padShake.wav');
+				player.scale.set(0.2, 0.4);
+
+				new FlxTimer().start(0.3, function(tmr:FlxTimer)
+				{
+					pad.cooldown = false;
+				});
+			}
+		}
 
 		if (Player.isDashing)
 			plrDashTrail.visible = true;
@@ -319,16 +340,6 @@ class PlayState extends FlxState
 				player.setPosition(entX - player.width / 2, entY - player.height + 16);
 				plrSpawnPos[0] = entX - player.width / 2;
 				plrSpawnPos[1] = entY - player.height + 16;
-
-			/*
-				var _door:FlxSprite = new FlxSprite().makeGraphic(286, 445, FlxColor.BLACK);
-				_door.scale.set(0.3, 0.3);
-				_door.updateHitbox();
-				_door.setPosition(entX - _door.width / 2, entY - _door.height + 16);
-				add(_door);
-				FlxSpriteUtil.fadeOut(_door, 3);
-			 */
-
 			case 'spike':
 				var spike:Spike = new Spike();
 				switch (epicEntity.values.rotation) // bogdan from the past here, make sure u fix the hitboxes depending on the direction :)
@@ -351,6 +362,12 @@ class PlayState extends FlxState
 						spike.width = spike.width / 2 + 10;
 				}
 				spikeGroup.add(spike);
+
+			case 'jumppad':
+				var _jumpPad:JumpPad = new JumpPad();
+				_jumpPad.launchForce = epicEntity.values.launchForce;
+				_jumpPad.setPosition(entX - _jumpPad.width / 2, entY - _jumpPad.height + 16);
+				jumpPadGroup.add(_jumpPad);
 			case 'tpenter':
 				tpEnter = new FlxSprite();
 				tpEnter.loadGraphic('assets/images/Portal.png');
