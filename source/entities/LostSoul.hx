@@ -22,10 +22,11 @@ class LostSoul extends FlxSprite
 		setSize(40.9, 108.9);
 		acceleration.y = PlayState.GRAVITY;
 		animation.addByPrefix('walk', 'walk', 24, true);
-		hitboxFix();
 
 		// FSM
 		fsm = new FSM(move);
+		offset.x = 90.1;
+		// hitboxFix();
 	}
 
 	override public function update(elapsed:Float)
