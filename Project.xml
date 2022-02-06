@@ -32,6 +32,7 @@
 	<source path="source" />
 	<source path="source/states" />
 	<source path="source/substates" />
+	<source path="source/entities" />
 	<assets path="assets" />
 
 	<!-- _______________________________ Libraries ______________________________ -->
