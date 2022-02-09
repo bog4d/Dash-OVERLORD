@@ -12,6 +12,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxSave;
+import flixel.util.FlxTimer;
 import lime.app.Application;
 
 class MainMenuState extends FlxState
@@ -78,7 +79,8 @@ class MainMenuState extends FlxState
 		add(new FlxSprite().loadGraphic('assets/images/menuLogo.png'));
 		add(optionGroup);
 		add(new FlxText(10, 670, FlxG.width, 'v$version').setFormat('assets/data/fonts/karma.TTF', 35, FlxColor.WHITE, FlxTextAlign.LEFT));
-
+		var navigationNotice:FlxSprite = new FlxSprite(0, 60).loadGraphic('assets/images/navigationNotice.png');
+		add(navigationNotice);
 		//------------------\\
 		super.create();
 		camera.bgColor = FlxColor.WHITE;
@@ -87,6 +89,12 @@ class MainMenuState extends FlxState
 		{
 			UIusable = true;
 			changeSelection(0);
+
+			FlxTween.tween(navigationNotice, {y: 0}, 1, {ease: FlxEase.circOut});
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				FlxTween.color(navigationNotice, 1, FlxColor.RED, FlxColor.WHITE, {ease: FlxEase.circOut});
+			});
 		});
 	}
 
