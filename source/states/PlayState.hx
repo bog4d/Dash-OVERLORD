@@ -347,15 +347,21 @@ class PlayState extends FlxState
 					case 'up':
 						spike.angle = 0;
 						spike.setPosition(entX, entY - spike.height + 16);
+						spike.width -= spike.width / 2;
+						spike.offset.x += spike.width / 2;
+						spike.x += spike.width / 2;
 					case 'down':
 						spike.angle = 180;
 						spike.setPosition(entX, entY + spike.height - 32);
+						spike.width -= spike.width / 2;
+						spike.offset.x += spike.width / 2;
+						spike.x += spike.width / 2;
 					case 'left':
 						spike.angle = -90;
 						spike.setPosition(entX - 32, entY);
 						spike.width = spike.width / 2;
 						spike.offset.x += 25;
-						spike.x += 25;
+						spike.x += 25.5;
 					case 'right':
 						spike.angle = 90;
 						spike.setPosition(entX - 16, entY);
