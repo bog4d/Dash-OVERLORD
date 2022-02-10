@@ -56,12 +56,17 @@ class PlayState extends FlxState
 	public static var deaths:Int;
 
 	var _settingsSave:FlxSave;
+	var _gameSave:FlxSave;
 
 	override public function create()
 	{
 		//-----[IMPORTANT STUFF]-----\\
 		_settingsSave = new FlxSave();
 		_settingsSave.bind('Settings');
+
+		_gameSave = new FlxSave();
+		_gameSave.bind('GameSave');
+
 		FlxG.fixedTimestep = false;
 		FlxTimer.globalManager.active = true;
 		FlxG.watch.addQuick('LevelID', LevelID);
@@ -140,6 +145,8 @@ class PlayState extends FlxState
 		GameCam.follow(player, _settingsSave.data.settings[0], 0.01);
 		//----------------\\
 		super.create(); // da super.create() :O
+		_gameSave.data.curLevel = LevelID;
+		_gameSave.flush();
 		//----------------\\
 		map.loadEntities(placeDaEntities, "entities");
 		GameCam.scroll.set(player.x - FlxG.width / 2, player.y - FlxG.width / 2);

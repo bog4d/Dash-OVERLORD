@@ -25,13 +25,14 @@ class MainMenuState extends FlxState
 
 	var optionGroup:FlxTypedGroup<FlxText>;
 	#if !debug
-	var txtOptions:Array<String> = ['New Game', 'Level select', 'Options', 'Credits', 'Donate'];
+	var txtOptions:Array<String> = ['New Game', 'Continue', 'Level select', 'Options', 'Credits', 'Donate'];
 	#else
-	var txtOptions:Array<String> = ['New Game', 'Level select', 'Credits', 'Options', 'Donate', 'anim debug'];
+	var txtOptions:Array<String> = ['New Game', 'Continue', 'Options', 'Credits', 'Donate', 'anim debug'];
 	#end
 	var curSelected:Int;
 
 	var _settingsSave:FlxSave;
+	var _gameSave:FlxSave;
 
 	var bg1:FlxSprite;
 	var bg2:FlxSprite;
@@ -44,6 +45,9 @@ class MainMenuState extends FlxState
 
 		_settingsSave = new FlxSave();
 		_settingsSave.bind('Settings');
+
+		_gameSave = new FlxSave();
+		_gameSave.bind('GameSave');
 
 		camera.antialiasing = _settingsSave.data.settings[2];
 
@@ -96,6 +100,7 @@ class MainMenuState extends FlxState
 				FlxTween.color(navigationNotice, 1, FlxColor.RED, FlxColor.WHITE, {ease: FlxEase.circOut});
 			});
 		});
+		optionGroup.members[1].text += ' : ' + _gameSave.data.curLevel;
 	}
 
 	override public function update(elapsed:Float)
@@ -120,7 +125,8 @@ class MainMenuState extends FlxState
 						PlayState.deaths = 0;
 						PlayState.fromLvSelect = false;
 						PlayState.LevelID = 0;
-
+						_gameSave.data.curLevel = 0;
+						_gameSave.flush();
 						if (firstPlay)
 						{
 							firstPlay = false;
@@ -137,6 +143,11 @@ class MainMenuState extends FlxState
 							FlxG.sound.play('assets/sounds/confirm.ogg');
 							camera.fade(FlxColor.BLACK, 0.5, false, function() FlxG.switchState(new PlayState()));
 						}
+					case 'continue':
+						PlayState.fromLvSelect = false;
+						FlxG.sound.play('assets/sounds/confirm.ogg');
+						PlayState.LevelID = _gameSave.data.curLevel;
+						camera.fade(FlxColor.BLACK, 0.5, false, function() FlxG.switchState(new PlayState()));
 
 					case 'level select':
 						FlxG.sound.play('assets/sounds/confirm.ogg');

@@ -19,6 +19,7 @@ class IntroState extends FlxState
 	var myName:FlxText;
 
 	var _settingsSave:FlxSave;
+	var _gameSave:FlxSave;
 
 	override public function create()
 	{
@@ -34,11 +35,22 @@ class IntroState extends FlxState
 		_settingsSave = new FlxSave();
 		_settingsSave.bind('Settings');
 
+		_gameSave = new FlxSave();
+		_gameSave.bind('GameSave');
+
 		if (_settingsSave.data.settings == null)
 		{
 			_settingsSave.data.settings = [FlxCameraFollowStyle.SCREEN_BY_SCREEN, true, true];
 			_settingsSave.flush();
 		}
+
+		if (_gameSave.data.curLevel == null)
+			_gameSave.data.curLevel = 0;
+
+		if (_gameSave.data.finishedOnce == null)
+			_gameSave.data.finishedOnce = false;
+
+		_gameSave.flush();
 		//-----------------------------------\\
 
 		new NGio(SecretHA.ID, SecretHA.ENC_KEY);
