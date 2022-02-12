@@ -22,6 +22,7 @@ class PlayState extends FlxState
 {
 	public static var GRAVITY = 1000;
 	public static var LevelID:Int;
+	public static var stopwatch:FlxTimer;
 	// public static var hasDied:Bool;
 	public static var fromLvSelect:Bool;
 
@@ -72,6 +73,7 @@ class PlayState extends FlxState
 		FlxG.watch.addQuick('LevelID', LevelID);
 		canTP = true;
 		exitDoorDebounce = false;
+		stopwatch = new FlxTimer();
 		//-----[CAMERA STUFF]-----\\
 		GameCam = new FlxCamera();
 		UIcam = new FlxCamera();
@@ -145,8 +147,14 @@ class PlayState extends FlxState
 		GameCam.follow(player, _settingsSave.data.settings[0], 0.01);
 		//----------------\\
 		super.create(); // da super.create() :O
-		_gameSave.data.curLevel = LevelID;
-		_gameSave.flush();
+		if (!fromLvSelect)
+		{
+			_gameSave.data.curLevel = LevelID;
+			_gameSave.flush();
+		}
+		stopwatch.reset();
+		stopwatch.start(999);
+		stopwatch.active = true;
 		//----------------\\
 		map.loadEntities(placeDaEntities, "entities");
 		GameCam.scroll.set(player.x - FlxG.width / 2, player.y - FlxG.width / 2);
@@ -269,6 +277,12 @@ class PlayState extends FlxState
 			if (!exitDoorDebounce)
 			{
 				exitDoorDebounce = true;
+				stopwatch.cancel();
+				hud.stopwatchText.color = 0xFF0000;
+
+				if (stopwatch.elapsedTime < BestTime.getLevelTime(LevelID))
+					BestTime.setNewTime(LevelID);
+
 				if (LevelID + 1 > maxLevels)
 				{
 					if (!fromLvSelect)
@@ -316,6 +330,7 @@ class PlayState extends FlxState
 		{
 			if (!fromLvSelect)
 			{
+				stopwatch.active = false;
 				endLevelAnimationTrigger.kill();
 				endLvAnimCutsceneTriggerHit();
 			}
@@ -349,6 +364,8 @@ class PlayState extends FlxState
 				plrSpawnPos[1] = entY - player.height + 16;
 			case 'spike':
 				var spike:Spike = new Spike();
+				spike.scale.set(0.48, 0.48);
+				spike.updateHitbox();
 				switch (epicEntity.values.rotation) // bogdan from the past here, make sure u fix the hitboxes depending on the direction :)
 				{
 					case 'up':
@@ -450,6 +467,7 @@ class PlayState extends FlxState
 		switch (LevelID)
 		{
 			case 0:
+				stopwatch.active = false;
 				player.screenCenter(X);
 				var daPopup:Popup = new Popup("Eric Skiff - Underclocked"); // this tune is a banger aaaaaAAAAAAAAA
 				daPopup.cameras = [UIcam];
@@ -466,6 +484,7 @@ class PlayState extends FlxState
 					onComplete: function(twn:FlxTween)
 					{
 						Player.MovementEnabled = true;
+						stopwatch.active = true;
 						/*
 							var watText:NarratorSpeak = new NarratorSpeak('Start');
 							watText.cameras = [UIcam];

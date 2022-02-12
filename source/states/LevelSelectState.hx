@@ -126,6 +126,8 @@ class LevelSelectState extends FlxState
 					lvThing.daY += moveBy;
 			}
 
+			FlxG.log.clear();
+			FlxG.log.notice('Best Level $curSelected time: ' + BestTime.getLevelTime(curSelected) + ' seconds.');
 			for (i in 0...lvGroup.length)
 			{
 				if (i != curSelected)

@@ -50,6 +50,13 @@ class IntroState extends FlxState
 		if (_gameSave.data.finishedOnce == null)
 			_gameSave.data.finishedOnce = false;
 
+		if (_gameSave.data.bestTimes == null)
+		{
+			_gameSave.data.bestTimes = new Map<Int, Float>();
+			BestTime.bestTimes = _gameSave.data.bestTimes;
+		}
+		BestTime.bestTimes = _gameSave.data.bestTimes;
+
 		_gameSave.flush();
 		//-----------------------------------\\
 

@@ -27,7 +27,15 @@ class MainMenuState extends FlxState
 	#if !debug
 	var txtOptions:Array<String> = ['New Game', 'Continue', 'Level select', 'Options', 'Credits', 'Donate'];
 	#else
-	var txtOptions:Array<String> = ['New Game', 'Continue', 'Options', 'Credits', 'Donate', 'anim debug'];
+	var txtOptions:Array<String> = [
+		'New Game',
+		'Continue',
+		'Level select',
+		'Options',
+		'Credits',
+		'Donate',
+		'anim debug'
+	];
 	#end
 	var curSelected:Int;
 
