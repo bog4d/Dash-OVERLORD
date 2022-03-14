@@ -1,10 +1,6 @@
 ![Dash OVERLORD LOGO](art/promo/DashOverlordLogo.png)
 
-# Dash OVERLORD : Created by Bogdan2D
-
-### Dash OVERLORD is a game developed in 1 week for HaxeJam 2021.
-
-### Go play it [here](https://www.newgrounds.com/portal/view/project/1769892)!
+# Dash OVERLORD 3.0 (Unfinished) : Created by Bogdan2D
 
 # Compiling
 
