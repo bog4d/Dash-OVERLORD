@@ -80,6 +80,14 @@ class AnimTestState extends FlxState
 				displayChar.animation.addByPrefix('slash', 'slash', 30, false);
 				displayChar.animation.addByPrefix('wake', 'wake up', 24, false);
 				displayChar.animation.play(animInput.text, true);
+			case 'player-insane':
+				if (displayChar.frames != sparrowFrames(charDropdown.selectedLabel))
+					displayChar.frames = sparrowFrames(charDropdown.selectedLabel);
+				displayChar.animation.addByPrefix('idle', 'idle', 24, true);
+				displayChar.animation.addByPrefix('walk', 'walk', 24, true);
+				displayChar.animation.addByPrefix('respawn', 'respawn ouch', 24, false);
+				displayChar.animation.addByPrefix('slash', 'slash', 30, false);
+				displayChar.animation.play(animInput.text, true);
 			case 'lostSoul':
 				if (displayChar.frames != sparrowFrames(charDropdown.selectedLabel))
 					displayChar.frames = sparrowFrames(charDropdown.selectedLabel);

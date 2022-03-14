@@ -90,7 +90,7 @@ class PlayState extends FlxState
 		UIcam.antialiasing = _settingsSave.data.settings[2];
 
 		//-----[ENTITIES]-----\\
-		player = new Player();
+		player = new Player(1);
 		plrDashTrail = new FlxTrail(player);
 		spikeGroup = new FlxTypedGroup<Spike>();
 		lostSoulGroup = new FlxTypedGroup<LostSoul>();

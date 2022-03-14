@@ -31,15 +31,31 @@ class Player extends FlxSprite
 
 	var daSpeed = 400;
 
-	public function new()
+	var curAct:Int;
+
+	public function new(?act:Int)
 	{
 		super();
 		isDashing = false;
 		MovementEnabled = false; // wait for fade
 		dashCooldown = false;
 
+		if (act != null)
+			curAct = act;
+		else
+			curAct = 1;
+
 		// Appearence
-		frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
+		switch (act)
+		{
+			case 1:
+				frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
+			case 2:
+				frames = FlxAtlasFrames.fromSparrow('assets/images/player.png', 'assets/images/player.xml');
+			case 3:
+				frames = FlxAtlasFrames.fromSparrow('assets/images/player-insane.png', 'assets/images/player-insane.xml');
+				daSpeed = 200;
+		}
 		scale.set(0.3, 0.3);
 		setSize(42.9, 108.9);
 		// antialiasing = true;
@@ -76,27 +92,6 @@ class Player extends FlxSprite
 
 		if (MovementEnabled)
 		{
-			/*
-				if (FlxG.keys.anyPressed(rightKeys))
-				{
-					acceleration.x = _acceleration;
-					flipX = false;
-					animation.play('walk');
-				}
-				else if (FlxG.keys.anyPressed(leftKeys))
-				{
-					acceleration.x = -_acceleration;
-					flipX = true;
-					animation.play('walk');
-				}
-				else
-				{
-					acceleration.x = 0;
-					velocity.x = 0;
-					animation.play('idle');
-				}
-			 */
-
 			if (FlxG.keys.anyJustPressed(jumpKeys) && isTouching(FlxObject.FLOOR))
 			{
 				velocity.y = -PlayState.GRAVITY / 2;
@@ -162,63 +157,122 @@ class Player extends FlxSprite
 		});
 	}
 
+	// Please forgive me for this function...
 	function hitboxFix()
 	{
-		// NOT FlipX
-		if (!flipX)
+		switch (curAct)
 		{
-			switch (animation.curAnim.name)
-			{
-				case 'idle':
-					offset.x = 70.1;
-					offset.y = 147.95;
-				case 'walk':
-					offset.x = 70.1;
-					offset.y = 147.95;
-				case 'respawn':
-					offset.x = 97.1;
-					offset.y = 147.95;
-				case 'slash':
-					offset.x = 114;
-					offset.y = 147.95;
-				case 'wake':
-					offset.x = 84;
-					offset.y = 145.95;
-			}
+			case 1:
+				if (!flipX)
+				{
+					switch (animation.curAnim.name)
+					{
+						case 'idle':
+							offset.x = 70.1;
+							offset.y = 147.95;
+						case 'walk':
+							offset.x = 70.1;
+							offset.y = 147.95;
+						case 'respawn':
+							offset.x = 97.1;
+							offset.y = 147.95;
+						case 'slash':
+							offset.x = 114;
+							offset.y = 147.95;
+						case 'wake':
+							offset.x = 84;
+							offset.y = 145.95;
+					}
+				}
+				else
+				{
+					switch (animation.curAnim.name)
+
+					{
+						case 'idle':
+							offset.x = 73.1;
+							offset.y = 147.95;
+						case 'walk':
+							offset.x = 73.1;
+							offset.y = 147.95;
+						case 'slash':
+							offset.x = 29;
+							offset.y = 147.95;
+					}
+				}
+			case 2:
+				if (!flipX)
+				{
+					switch (animation.curAnim.name)
+					{
+						case 'idle':
+							offset.x = 70.1;
+							offset.y = 147.95;
+						case 'walk':
+							offset.x = 70.1;
+							offset.y = 147.95;
+						case 'respawn':
+							offset.x = 97.1;
+							offset.y = 147.95;
+						case 'slash':
+							offset.x = 114;
+							offset.y = 147.95;
+						case 'wake':
+							offset.x = 84;
+							offset.y = 145.95;
+					}
+				}
+				else
+				{
+					switch (animation.curAnim.name)
+
+					{
+						case 'idle':
+							offset.x = 73.1;
+							offset.y = 147.95;
+						case 'walk':
+							offset.x = 73.1;
+							offset.y = 147.95;
+						case 'slash':
+							offset.x = 29;
+							offset.y = 147.95;
+					}
+				}
+			case 3:
+				if (!flipX)
+				{
+					switch (animation.curAnim.name)
+					{
+						case 'idle':
+							offset.x = 76.1;
+							offset.y = 146.95;
+						case 'walk':
+							offset.x = 76.1;
+							offset.y = 146.95;
+						case 'respawn':
+							offset.x = 112;
+							offset.y = 144.95;
+						case 'slash':
+							offset.x = 128;
+							offset.y = 146.95;
+					}
+				}
+				else
+				{
+					switch (animation.curAnim.name)
+					{
+						case 'idle':
+							offset.x = 92.1;
+							offset.y = 146.95;
+						case 'walk':
+							offset.x = 92.1;
+							offset.y = 146.95;
+						case 'slash':
+							offset.x = 39;
+							offset.y = 146.95;
+					}
+				}
 		}
-		else
-		{
-			switch (animation.curAnim.name)
-			{
-				case 'idle':
-					offset.x = 73.1;
-					offset.y = 147.95;
-				case 'walk':
-					offset.x = 73.1;
-					offset.y = 147.95;
-				case 'slash':
-					offset.x = 29;
-					offset.y = 147.95;
-			}
-		}
-		/*
-			// NOT FlipX
-			if (animation.curAnim.name == 'idle' && !flipX)
-				offset.x = 70.1;
-
-			if (animation.curAnim.name == 'walk' && !flipX)
-				offset.x = 70.1;
-
-			if (animation.curAnim.name == 'respawn' && !flipX)
-				offset.x = 97.1;
-
-			//FlipX
-						if (animation.curAnim.name == 'idle' && flipX)
-				offset.x = 73.1;
-
-			if (animation.curAnim.name == 'walk' && flipX)
-				offset.x = 73.1;
-		 */
 	}
 
 	//-----[STATES]-----\\

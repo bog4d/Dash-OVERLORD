@@ -4,6 +4,7 @@ import flixel.FlxCamera.FlxCameraFollowStyle;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.graphics.FlxGraphic;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -40,7 +41,7 @@ class IntroState extends FlxState
 
 		if (_settingsSave.data.settings == null)
 		{
-			_settingsSave.data.settings = [FlxCameraFollowStyle.SCREEN_BY_SCREEN, true, true];
+			_settingsSave.data.settings = [FlxCameraFollowStyle.PLATFORMER, true, true];
 			_settingsSave.flush();
 		}
 
@@ -78,6 +79,13 @@ class IntroState extends FlxState
 		myName.alpha = 0;
 
 		super.create();
+		//-----[Cache graphics]-----\\
+		FlxGraphic.fromAssetKey('assets/images/player.png').persist = true;
+		FlxGraphic.fromAssetKey('assets/images/lostSoul.png').persist = true;
+		FlxGraphic.fromAssetKey('assets/images/tileset.png').persist = true;
+		FlxGraphic.fromAssetKey('assets/images/spike.png').persist = true;
+		FlxGraphic.fromAssetKey('assets/images/spikeHit.png').persist = true;
+		//---------------------------\\
 		camera.antialiasing = _settingsSave.data.settings[2];
 
 		#if !debug

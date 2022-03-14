@@ -1,2 +1,4 @@
 player
+player-inverted
+player-insane
 lostSoul
